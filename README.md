@@ -1,8 +1,6 @@
-# Personal Portfolio - Cloud Architect & AWS Expert
+# Personal Portfolio - Cloud Architect & DevOps Engineer
 
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. This portfolio showcases professional experience, technical skills, projects, and technical articles.
-
-![Portfolio Preview](./preview.png)
+A modern, responsive portfolio website built with React, Shadcn, and Tailwind CSS. This portfolio showcases professional experience, technical skills, projects, and technical articles.
 
 ## 🚀 Features
 
@@ -19,7 +17,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 
 ## 🛠️ Tech Stack
 
-- **Framework:** React 18 with TypeScript
+- **Framework:** React with Shadcn
 - **Build Tool:** Vite
 - **Styling:** Tailwind CSS
 - **Icons:** Lucide React
@@ -79,7 +77,6 @@ src/
 
 3. Content Structure:
    - Each section is a separate component
-   - Data structures are defined with TypeScript interfaces
    - Easy to add or remove sections as needed
 
 ## 🔍 Component Overview
