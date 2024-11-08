@@ -1,12 +1,12 @@
 // src/components/sections/Hero.tsx
-import { Linkedin, NotebookPen, Github, Twitter } from "lucide-react";
+import { Linkedin, NotebookPen, Github } from "lucide-react";
 
 const Hero = () => {
   return (
     <section className="pt-32 pb-20 px-6">
       <div className="container mx-auto">
         <h1 className="text-5xl font-bold mb-6">
-          Cloud Systems Architect & DevOps Engineer
+          Cloud Architect & DevOps Engineer
         </h1>
         <p className="text-xl mb-8 max-w-2xl">
           Specialized in designing and building scalable, resilient and secure
