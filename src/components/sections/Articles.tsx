@@ -11,25 +11,32 @@ interface Article {
 
 const articles: Article[] = [
   {
-    tags: ["aws", "cloud", "terraform"],
-    date: "Oct 15, 2023",
-    title: "Infrastructure as Code Best Practices",
-    description: "Learn how to structure your Terraform code for large-scale AWS deployments and implement best practices for managing cloud infrastructure.",
-    url: "https://dev.to/diek"
+    tags: ["aws", "cloud", "designpatters", "spanish"],
+    date: "Nov 6, 2024",
+    title: "Bulkhead: Compartmentalizing your Microservices",
+    description: "A comprehensive guide on how to implement the Bulkhead design pattern in your microservices architecture for improved fault tolerance and resiliency.",
+    url: "https://dev.to/diek/bulkhead-compartimentando-tus-microservicios-4him"
   },
   {
-    tags: ["serverless", "aws", "nodejs"],
-    date: "Sep 28, 2023",
-    title: "Building Serverless APIs with AWS Lambda",
-    description: "A comprehensive guide to creating scalable and cost-effective APIs using AWS Lambda, API Gateway, and Node.js.",
-    url: "https://dev.to/diek"
+    tags: ["aws", "cloud", "designpatters", "spanish"],
+    date: "Oct 15, 2024",
+    title: "Implementing Blue-Green Deployments with AWS Route 53",
+    description: "A step-by-step guide on how to set up blue-green deployments with AWS Route 53 and Terraform for seamless deployments.",
+    url: "https://dev.to/diek/implementando-despliegues-blue-green-con-aws-route-53-1n14"
   },
   {
-    tags: ["devops", "automation", "github"],
-    date: "Aug 12, 2023",
-    title: "Advanced GitHub Actions Workflows",
-    description: "Deep dive into creating sophisticated CI/CD pipelines using GitHub Actions, including deployment to AWS and automated testing.",
-    url: "https://dev.to/diek"
+    tags: ["finops", "aws", "humor", "spanish"],
+    date: "Oct 14, 2024",
+    title: "When your AWS bill becomes a meme and your finance department becomes a meme-lord 🚀💸",
+    description: "A deep dive into the cost-saving benefits of serverless architecture and how to optimize your AWS bill for Lambda functions.",
+    url: "https://dev.to/diek/cuando-tu-factura-de-aws-se-convierte-en-un-meme-y-tu-departamento-financiero-en-un-meme-lord-2li8"
+  },
+  {
+    tags: ["privacy", "cybersecurity", "spanish"],
+    date: "7 sept, 2024",
+    title: "The Digital Canary: Deciphering the Silences of Telegram",
+    description: "An in-depth analysis of the privacy implications of Telegram's Canary Warrant and how it affects users' data protection.",
+    url: "https://dev.to/diek/el-canario-digital-descifrando-los-silencios-de-telegram-2gh5"
   }
 ];
 
