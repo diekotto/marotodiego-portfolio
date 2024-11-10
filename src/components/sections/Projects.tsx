@@ -12,19 +12,19 @@ const projects: Project[] = [
   {
     title: "AI-code-analysis-browser-extension",
     description: "A browser extension that uses AI to analyze code quality on GitHub. Supports multiple languages and provides detailed reports with suggestions for improvement.",
-    technologies: ["React", "Terraform", "Nodejs", "Claude AI", "GitHub API"],
+    technologies: ["React", "Terraform", "Node.js", "Claude AI", "GitHub API"],
     githubUrl: "https://github.com/diekotto/AI-code-analysis-browser-extension"
   },
   {
     title: "Redlock k8s laboratory",
     description: "A Kubernetes cluster with redis Redlock semaphores for testing distributed systems. Laboratory with mini-kube instructions, includes full client-server system to see in life the cluster communicaiton blockers.",
-    technologies: ["Kubernetes", "minikube", "Redlock", "Docker", "Docker-compose", "Nodejs", "Cron"],
+    technologies: ["Kubernetes", "minikube", "Redlock", "Docker", "Docker-compose", "Node.js", "Cron"],
     githubUrl: "https://github.com/diekotto/redlock-k8s-laboratory"
   },
   {
     title: "Social Food Bank Management System - Final Degree Project",
     description: "Final grade: 9/10. Full-stack web application developed for social food banks, facilitating access to basic food supplies for vulnerable families. The system enables inventory control, user management, and statistical reporting.",
-    technologies: ["Typescript", "Angular", "Nodejs", "Nestjs", "Websockets", "Aws", "MongoDB"],
+    technologies: ["Typescript", "Angular", "Node.js", "Nestjs", "Websockets", "Aws", "MongoDB"],
     githubUrl: "https://github.com/diekotto/TFG"
   }
 ];
