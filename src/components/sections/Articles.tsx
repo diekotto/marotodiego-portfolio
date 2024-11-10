@@ -19,7 +19,7 @@ const articles: ArticlesByLanguage = {
   en: [
     {
       tags: ["aws", "cloud", "designpatters", "spanish"],
-      date: "Nov 6, 2024",
+      date: "Nov 10, 2024",
       title: "Bulkhead: Compartmentalizing your Microservices",
       description:
         "A comprehensive guide on how to implement the Bulkhead design pattern in your microservices architecture for improved fault tolerance and resiliency.",
@@ -27,7 +27,7 @@ const articles: ArticlesByLanguage = {
     },
     {
       tags: ["aws", "cloud", "designpatters", "spanish"],
-      date: "Oct 15, 2024",
+      date: "Nov 10, 2024",
       title: "Implementing Blue-Green Deployments with AWS Route 53",
       description:
         "A step-by-step guide on how to set up blue-green deployments with AWS Route 53 and Terraform for seamless deployments.",
@@ -35,7 +35,7 @@ const articles: ArticlesByLanguage = {
     },
     {
       tags: ["finops", "aws", "humor", "spanish"],
-      date: "Oct 14, 2024",
+      date: "Nov 10, 2024",
       title:
         "When your AWS bill becomes a meme and your finance department becomes a meme-lord 🚀💸",
       description:
@@ -44,7 +44,7 @@ const articles: ArticlesByLanguage = {
     },
     {
       tags: ["privacy", "cybersecurity", "spanish"],
-      date: "7 sept, 2024",
+      date: "Nov 10, 2024",
       title: "The Digital Canary: Deciphering the Silences of Telegram",
       description:
         "An in-depth analysis of the privacy implications of Telegram's Canary Warrant and how it affects users' data protection.",
