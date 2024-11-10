@@ -1,5 +1,5 @@
 // src/components/sections/Articles.tsx
-import { ExternalLink, Languages } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useState } from "react";
 
 interface Article {
@@ -18,38 +18,12 @@ interface ArticlesByLanguage {
 const articles: ArticlesByLanguage = {
   en: [
     {
-      tags: ["aws", "cloud", "terraform"],
-      date: "Oct 15, 2023",
-      title: "Infrastructure as Code Best Practices",
-      description:
-        "Learn how to structure your Terraform code for large-scale AWS deployments and implement best practices for managing cloud infrastructure.",
-      url: "https://dev.to/diek",
-    },
-    {
-      tags: ["serverless", "aws", "nodejs"],
-      date: "Sep 28, 2023",
-      title: "Building Serverless APIs with AWS Lambda",
-      description:
-        "A comprehensive guide to creating scalable and cost-effective APIs using AWS Lambda, API Gateway, and Node.js.",
-      url: "https://dev.to/diek",
-    },
-    {
-      tags: ["devops", "automation", "github"],
-      date: "Aug 12, 2023",
-      title: "Advanced GitHub Actions Workflows",
-      description:
-        "Deep dive into creating sophisticated CI/CD pipelines using GitHub Actions, including deployment to AWS and automated testing.",
-      url: "https://dev.to/diek",
-    },
-  ],
-  es: [
-    {
       tags: ["aws", "cloud", "designpatters", "spanish"],
       date: "Nov 6, 2024",
       title: "Bulkhead: Compartmentalizing your Microservices",
       description:
         "A comprehensive guide on how to implement the Bulkhead design pattern in your microservices architecture for improved fault tolerance and resiliency.",
-      url: "https://dev.to/diek/bulkhead-compartimentando-tus-microservicios-4him",
+      url: "https://dev.to/diek/bulkhead-compartmentalizing-your-microservices-1db2",
     },
     {
       tags: ["aws", "cloud", "designpatters", "spanish"],
@@ -57,7 +31,7 @@ const articles: ArticlesByLanguage = {
       title: "Implementing Blue-Green Deployments with AWS Route 53",
       description:
         "A step-by-step guide on how to set up blue-green deployments with AWS Route 53 and Terraform for seamless deployments.",
-      url: "https://dev.to/diek/implementando-despliegues-blue-green-con-aws-route-53-1n14",
+      url: "https://dev.to/diek/implementing-blue-green-deployments-with-aws-route-53-4il",
     },
     {
       tags: ["finops", "aws", "humor", "spanish"],
@@ -66,7 +40,7 @@ const articles: ArticlesByLanguage = {
         "When your AWS bill becomes a meme and your finance department becomes a meme-lord 🚀💸",
       description:
         "A deep dive into the cost-saving benefits of serverless architecture and how to optimize your AWS bill for Lambda functions.",
-      url: "https://dev.to/diek/cuando-tu-factura-de-aws-se-convierte-en-un-meme-y-tu-departamento-financiero-en-un-meme-lord-2li8",
+      url: "https://dev.to/diek/when-your-aws-bill-goes-viral-and-your-finance-department-becomes-a-memelord-2ke1",
     },
     {
       tags: ["privacy", "cybersecurity", "spanish"],
@@ -74,6 +48,41 @@ const articles: ArticlesByLanguage = {
       title: "The Digital Canary: Deciphering the Silences of Telegram",
       description:
         "An in-depth analysis of the privacy implications of Telegram's Canary Warrant and how it affects users' data protection.",
+      url: "https://dev.to/diek/the-digital-canary-decoding-telegrams-silences-546d",
+    },
+  ],
+  es: [
+    {
+      tags: ["aws", "cloud", "designpatters", "spanish"],
+      date: "Nov 6, 2024",
+      title: "Bulkhead: Compartimentando tus Microservicios",
+      description:
+        "Una guía completa sobre cómo implementar el patrón de diseño Bulkhead en tu arquitectura de microservicios para una mayor tolerancia a fallos y resiliencia.",
+      url: "https://dev.to/diek/bulkhead-compartimentando-tus-microservicios-4him",
+    },
+    {
+      tags: ["aws", "cloud", "designpatters", "spanish"],
+      date: "Oct 15, 2024",
+      title: "Implementando Despliegues Blue-Green con AWS Route 53",
+      description:
+        "Una guía paso a paso sobre cómo configurar despliegues blue-green con AWS Route 53 y Terraform para despliegues sin interrupciones.",
+      url: "https://dev.to/diek/implementando-despliegues-blue-green-con-aws-route-53-1n14",
+    },
+    {
+      tags: ["finops", "aws", "humor", "spanish"],
+      date: "Oct 14, 2024",
+      title:
+        "Cuando tu factura de AWS se convierte en un meme y tu departamento financiero en un meme-lord 🚀💸",
+      description:
+        "Un análisis profundo sobre los beneficios de ahorro de costes de la arquitectura serverless y cómo optimizar tu factura de AWS para funciones Lambda.",
+      url: "https://dev.to/diek/cuando-tu-factura-de-aws-se-convierte-en-un-meme-y-tu-departamento-financiero-en-un-meme-lord-2li8",
+    },
+    {
+      tags: ["privacy", "cybersecurity", "spanish"],
+      date: "7 sept, 2024",
+      title: "El Canario Digital: Descifrando los Silencios de Telegram",
+      description:
+        "Un análisis en profundidad de las implicaciones de privacidad de la Garantía de Canario de Telegram y cómo afecta a la protección de datos de los usuarios.",
       url: "https://dev.to/diek/el-canario-digital-descifrando-los-silencios-de-telegram-2gh5",
     },
   ],
