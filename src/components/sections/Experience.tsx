@@ -13,19 +13,19 @@ const experiences: JobExperience[] = [
     title: "Cloud Architect",
     company: "Softtek",
     description: "Leading AWS architecture and cloud transformation initiatives as a consultant. Responsible for designing and implementing scalable cloud solutions, automating infrastructure deployment, and mentoring teams in cloud-native development practices. Specializing in serverless architectures and establishing robust CI/CD pipelines for enterprise clients.",
-    technologies: ["AWS", "Terraform", "GitHub Actions", "Python", "Serverless"]
+    technologies: ["AWS", "Terraform", "GitHub Actions", "Python", "Node.js", "Serverless", "Arquitecture design"]
   },
   {
     title: "Cloud & Software Engineer",
     company: "Insanity Dev",
     description: "Architecting and developing cloud-native applications with a focus on serverless technologies. Leading the design and implementation of highly available systems, implementing infrastructure as code practices, and conducting performance optimization and stress testing for critical applications.",
-    technologies: ["AWS", "Terraform", "Node.js", "DevOps", "Python"]
+    technologies: ["AWS", "Terraform", "Node.js", "DevOps", "Serverless", "Docker", "Kubernetes"]
   },
   {
     title: "Software Engineer",
     company: "Bit2Me",
     description: "Developed and maintained high-performance cryptocurrency trading systems. Built robust backend services using Node.js and TypeScript, managing complex database architectures, and implementing Kubernetes-based infrastructure. Focused on creating secure and scalable financial technology solutions.",
-    technologies: ["Node.js", "TypeScript", "MongoDB", "PostgreSQL", "Kubernetes", "GCloud"]
+    technologies: ["Node.js", "TypeScript", "MongoDB", "PostgreSQL", "Kubernetes", "AWS", "GCloud"]
   }
 ];
 
