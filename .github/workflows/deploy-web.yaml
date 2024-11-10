@@ -1,0 +1,53 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_ARN_TO_ASSUME }}
+  REGION: eu-west-3
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.ROLE_TO_ASSUME }}
+          aws-region: ${{ env.REGION }}
+
+      - name: Upload index.html with no-cache
+        run: |
+          aws s3 cp dist/index.html s3://marotodiego-portfolio/index.html \
+            --cache-control "max-age=0,no-cache,no-store,must-revalidate"
+
+      - name: Upload remaining assets
+        run: |
+          aws s3 sync dist/ s3://marotodiego-portfolio/ \
+            --delete --cache-control 'max-age=31536000, immutable' --exclude '*.html'
