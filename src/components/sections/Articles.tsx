@@ -18,6 +18,14 @@ interface ArticlesByLanguage {
 const articles: ArticlesByLanguage = {
   en: [
     {
+      tags: ["aws", "cloud", "designpatters", "sre"],
+      date: "Nov 13, 2024",
+      title: "Retry Pattern: Handling Transient Failures in Distributed Systems",
+      description:
+        "A detailed guide on how to implement the Retry design pattern in your microservices architecture for handling transient failures and improving system reliability.",
+      url: "https://dev.to/diek/retry-pattern-handling-transient-failures-in-distributed-systems-i7a"
+    },
+    {
       tags: ["aws", "cloud", "designpatters", "spanish"],
       date: "Nov 10, 2024",
       title: "Bulkhead: Compartmentalizing your Microservices",
@@ -52,6 +60,14 @@ const articles: ArticlesByLanguage = {
     },
   ],
   es: [
+    {
+      tags: ["aws", "cloud", "designpatters", "sre"],
+      date: "Nov 13, 2024",
+      title: "Retry Pattern: Manejando Fallos Transitorios en Sistemas Distribuidos",
+      description:
+        "Una guía detallada sobre cómo implementar el patrón de diseño Retry en tu arquitectura de microservicios para manejar fallos transitorios y mejorar la fiabilidad del sistema.",
+      url: "https://dev.to/diek/retry-pattern-manejando-fallos-transitorios-en-sistemas-distribuidos-onh"
+    },
     {
       tags: ["aws", "cloud", "designpatters", "spanish"],
       date: "Nov 6, 2024",
