@@ -10,10 +10,23 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "AI-code-analysis-browser-extension",
-    description: "A browser extension that uses AI to analyze code quality on GitHub. Supports multiple languages and provides detailed reports with suggestions for improvement.",
-    technologies: ["React", "Terraform", "Node.js", "Claude AI", "GitHub API"],
-    githubUrl: "https://github.com/diekotto/AI-code-analysis-browser-extension"
+    title: "Repository Dispatch",
+    description: "A GitHub action that dispatches events to other repositories. It allows you to trigger workflows in other repositories, enabling cross-repository workflows.",
+    technologies: ["Node.js", "GitHub API", "Github Actions"],
+    githubUrl: "https://github.com/diekotto/repository-dispatch"
+  },
+
+  {
+    title: "AI Pull Review",
+    description: "A powerful tool for automated code review powered by Anthropic's Claude AI. Available both as a GitHub Action and as an NPM package for CLI usage.",
+    technologies: ["Node.js", "Claude AI", "GitHub API", "Github Actions", "NPM"],
+    githubUrl: "https://github.com/diekotto/ai-pull-review"
+  },
+  {
+    title: "Sonar Scanner Analysis",
+    description: "A GitHub Action that runs SonarQube analysis using local Docker containers, providing a self-contained analysis environment without requiring an external SonarQube server.",
+    technologies: ["Node.js", "SonarQube", "GitHub API", "Github Actions", "Docker"],
+    githubUrl: "https://github.com/diekotto/sonar-scanner-analysis"
   },
   {
     title: "Redlock k8s laboratory",
