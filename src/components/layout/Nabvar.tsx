@@ -14,30 +14,18 @@ const Navbar = () => {
           <Cloud className="w-6 h-6" />
           <span className="text-xl font-bold">Diego Maroto</span>
         </div>
-        
+
         <div className="hidden md:flex items-center space-x-8">
-          <button 
-            onClick={() => scrollToSection('skills')}
-            className="hover:text-blue-400 transition-colors"
-          >
+          <button onClick={() => scrollToSection('skills')} className="hover:text-blue-400 transition-colors">
             Skills
           </button>
-          <button 
-            onClick={() => scrollToSection('experience')}
-            className="hover:text-blue-400 transition-colors"
-          >
+          <button onClick={() => scrollToSection('experience')} className="hover:text-blue-400 transition-colors">
             Experience
           </button>
-          <button 
-            onClick={() => scrollToSection('projects')}
-            className="hover:text-blue-400 transition-colors"
-          >
+          <button onClick={() => scrollToSection('projects')} className="hover:text-blue-400 transition-colors">
             Projects
           </button>
-          <button 
-            onClick={() => scrollToSection('articles')}
-            className="hover:text-blue-400 transition-colors"
-          >
+          <button onClick={() => scrollToSection('articles')} className="hover:text-blue-400 transition-colors">
             Articles
           </button>
         </div>

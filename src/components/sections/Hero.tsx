@@ -1,17 +1,14 @@
 // src/components/sections/Hero.tsx
-import { Linkedin, NotebookPen, Github } from "lucide-react";
+import { Linkedin, NotebookPen, Github } from 'lucide-react';
 
 const Hero = () => {
   return (
     <section className="pt-32 pb-20 px-6">
       <div className="container mx-auto">
-        <h1 className="text-5xl font-bold mb-6">
-          Cloud Architect & DevOps Engineer
-        </h1>
+        <h1 className="text-5xl font-bold mb-6">Cloud Architect & DevOps Engineer</h1>
         <p className="text-xl mb-8 max-w-2xl">
-          Specialized in designing and building scalable, resilient and secure
-          cloud infrastructure. Extensive experience with Node.js, TypeScript,
-          Python and serverless architectures.
+          Specialized in designing and building scalable, resilient and secure cloud infrastructure. Extensive
+          experience with Node.js, TypeScript, Python and serverless architectures.
         </p>
         <div className="flex space-x-4">
           <a
