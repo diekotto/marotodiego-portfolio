@@ -137,18 +137,6 @@ resource "aws_route53_record" "portfolio" {
   }
 }
 
-resource "aws_route53_record" "apex" {
-  # This doesn't work with the CloudFront distribution
-  zone_id = data.aws_route53_zone.portfolio.zone_id
-  name    = ""
-  type    = "A"
-  alias {
-    name                   = aws_route53_record.portfolio.fqdn
-    zone_id                = data.aws_route53_zone.portfolio.zone_id
-    evaluate_target_health = false
-  }
-}
-
 ###############################################################################
 # 1. Certificate + DNS-validation
 ###############################################################################
