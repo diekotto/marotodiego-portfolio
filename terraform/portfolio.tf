@@ -130,14 +130,14 @@ resource "aws_acm_certificate_validation" "portfolio" {
   validation_record_fqdns = [for record in aws_route53_record.portfolio_cert_validation : record.fqdn]
 }
 
-resource "aws_route53_record" "portfolio" {
-  zone_id = data.aws_route53_zone.portfolio.zone_id
-  name    = ""
-  type    = "A"
+# resource "aws_route53_record" "portfolio" {
+#   zone_id = data.aws_route53_zone.portfolio.zone_id
+#   name    = ""
+#   type    = "A"
 
-  alias {
-    name                   = aws_cloudfront_distribution.portfolio.domain_name
-    zone_id                = aws_cloudfront_distribution.portfolio.hosted_zone_id
-    evaluate_target_health = false
-  }
-}
+#   alias {
+#     name                   = aws_cloudfront_distribution.portfolio.domain_name
+#     zone_id                = aws_cloudfront_distribution.portfolio.hosted_zone_id
+#     evaluate_target_health = false
+#   }
+# }
