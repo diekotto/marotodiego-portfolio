@@ -1,4 +1,4 @@
-name: "Terraform CI"
+name: 'Terraform CI'
 
 on:
   push:
@@ -37,7 +37,7 @@ jobs:
 
       - name: Terraform Init
         working-directory: terraform
-        run: tofu init
+        run: tofu init -input=false -upgrade
 
       - name: Terraform Plan
         working-directory: terraform
@@ -81,6 +81,10 @@ jobs:
         with:
           role-to-assume: ${{ env.ROLE_TO_ASSUME }}
           aws-region: ${{ env.REGION }}
+
+      - name: Terraform Init
+        working-directory: terraform
+        run: tofu init -input=false -upgrade
 
       - name: OpenTofu Apply
         working-directory: terraform
