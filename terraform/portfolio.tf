@@ -134,7 +134,6 @@ resource "aws_acm_certificate_validation" "portfolio" {
 resource "aws_route53_record" "portfolio" {
   zone_id = data.aws_route53_zone.portfolio.zone_id
   name    = "www"
-  ttl     = 60
   type    = "A"
   alias {
     name                   = aws_cloudfront_distribution.portfolio.domain_name
