@@ -70,7 +70,7 @@ resource "aws_cloudfront_cache_policy" "portfolio_1d" {
 # CloudFront distribution
 resource "aws_cloudfront_distribution" "portfolio" {
   depends_on          = [aws_acm_certificate_validation.portfolio]
-  aliases             = ["portfolio.marotodiego.com"]
+  aliases             = [aws_acm_certificate.portfolio.domain_name]
   enabled             = true
   is_ipv6_enabled     = true
   comment             = "marotodiego.com Portfolio static site"
