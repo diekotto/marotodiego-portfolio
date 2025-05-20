@@ -144,7 +144,7 @@ resource "aws_route53_record" "portfolio" {
 
 resource "aws_route53_record" "apex" {
   zone_id = data.aws_route53_zone.portfolio.zone_id
-  name    = "@"
+  name    = ""
   type    = "A"
   alias {
     name                   = aws_route53_record.portfolio.fqdn
