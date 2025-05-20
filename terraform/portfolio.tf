@@ -100,7 +100,7 @@ resource "aws_cloudfront_distribution" "portfolio" {
 }
 
 data "aws_route53_zone" "portfolio" {
-  name         = "marotodiego.com"
+  name         = var.domain_name
   private_zone = false
 }
 
@@ -251,4 +251,34 @@ resource "aws_api_gateway_stage" "redirect_stage" {
   rest_api_id   = aws_api_gateway_rest_api.redirect_api.id
   deployment_id = aws_api_gateway_deployment.redirect_deployment.id
   stage_name    = "prod"
+}
+
+####################################################################################
+# 4. Custom domain link
+####################################################################################
+
+resource "aws_api_gateway_domain_name" "redirect_custom_domain" {
+  domain_name              = aws_acm_certificate.redirect_cert.domain_name
+  regional_certificate_arn = aws_acm_certificate_validation.redirect_cert.certificate_arn
+
+  endpoint_configuration {
+    types = ["REGIONAL"]
+  }
+}
+
+resource "aws_api_gateway_base_path_mapping" "redirect_base_path" {
+  domain_name = aws_api_gateway_domain_name.redirect_custom_domain.domain_name
+  api_id = aws_api_gateway_rest_api.redirect_api.id
+  stage_name  = aws_api_gateway_stage.redirect_stage.stage_name
+}
+
+resource "aws_route53_record" "redirect" {
+  zone_id = data.aws_route53_zone.portfolio.zone_id
+  name    = var.domain_name
+  type    = "A"
+  alias {
+    name                   = aws_api_gateway_domain_name.redirect_custom_domain.cloudfront_domain_name
+    zone_id                = aws_api_gateway_domain_name.redirect_custom_domain.cloudfront_zone_id
+    evaluate_target_health = false
+  }
 }
