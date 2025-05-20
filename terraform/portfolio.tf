@@ -70,7 +70,7 @@ resource "aws_cloudfront_cache_policy" "portfolio_1d" {
 # CloudFront distribution
 resource "aws_cloudfront_distribution" "portfolio" {
   depends_on          = [aws_acm_certificate_validation.portfolio]
-  # aliases             = [aws_acm_certificate.portfolio.domain_name]
+  aliases             = [aws_acm_certificate.portfolio.domain_name]
   enabled             = true
   is_ipv6_enabled     = true
   comment             = "marotodiego.com Portfolio static site"
@@ -98,10 +98,9 @@ resource "aws_cloudfront_distribution" "portfolio" {
     }
   }
   viewer_certificate {
-    # acm_certificate_arn      = aws_acm_certificate_validation.portfolio.certificate_arn
-    # ssl_support_method       = "sni-only"
-    # minimum_protocol_version = "TLSv1.2_2021"
-    cloudfront_default_certificate = true
+    acm_certificate_arn      = aws_acm_certificate_validation.portfolio.certificate_arn
+    ssl_support_method       = "sni-only"
+    minimum_protocol_version = "TLSv1.2_2021"
   }
 }
 
