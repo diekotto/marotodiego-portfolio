@@ -168,7 +168,6 @@ resource "aws_route53_record" "redirect_cert_validation" {
 }
 
 resource "aws_acm_certificate_validation" "redirect_cert" {
-  provider                = aws.cloudfront
   certificate_arn         = aws_acm_certificate.redirect_cert.arn
   validation_record_fqdns = [for record in aws_route53_record.redirect_cert_validation : record.fqdn]
 }
