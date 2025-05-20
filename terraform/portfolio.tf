@@ -70,11 +70,12 @@ resource "aws_cloudfront_cache_policy" "portfolio_1d" {
 # CloudFront distribution
 resource "aws_cloudfront_distribution" "portfolio" {
   depends_on          = [aws_acm_certificate_validation.portfolio]
-  aliases             = [aws_acm_certificate.portfolio.domain_name]
+  # aliases             = [aws_acm_certificate.portfolio.domain_name]
   enabled             = true
   is_ipv6_enabled     = true
   comment             = "marotodiego.com Portfolio static site"
   default_root_object = "index.html"
+  http_version        = "http2and3"
 
   origin {
     domain_name              = aws_s3_bucket.portfolio.bucket_regional_domain_name
