@@ -110,7 +110,7 @@ data "aws_route53_zone" "portfolio" {
 
 resource "aws_acm_certificate" "portfolio" {
   provider          = aws.cloudfront
-  domain_name       = "marotodiego.com"
+  domain_name       = "www.${data.aws_route53_zone.portfolio.name}"
   validation_method = "DNS"
 }
 
@@ -130,14 +130,10 @@ resource "aws_acm_certificate_validation" "portfolio" {
   validation_record_fqdns = [for record in aws_route53_record.portfolio_cert_validation : record.fqdn]
 }
 
-# resource "aws_route53_record" "portfolio" {
-#   zone_id = data.aws_route53_zone.portfolio.zone_id
-#   name    = ""
-#   type    = "A"
-
-#   alias {
-#     name                   = aws_cloudfront_distribution.portfolio.domain_name
-#     zone_id                = aws_cloudfront_distribution.portfolio.hosted_zone_id
-#     evaluate_target_health = false
-#   }
-# }
+resource "aws_route53_record" "portfolio" {
+  zone_id = data.aws_route53_zone.portfolio.zone_id
+  name    = "www"
+  type    = "CNAME"
+  ttl     = 60
+  records = [aws_cloudfront_distribution.portfolio.domain_name]
+}
