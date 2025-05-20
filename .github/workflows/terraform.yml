@@ -1,0 +1,87 @@
+name: "Terraform CI"
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'terraform/**'
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  ROLE_TO_ASSUME: ${{ secrets.AWS_ROLE_ARN_TO_ASSUME }}
+  REGION: eu-west-1
+
+jobs:
+  plan:
+    name: Terraform Plan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - uses: opentofu/setup-opentofu@v1
+        with:
+          tofu_version: 1.9.1
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.ROLE_TO_ASSUME }}
+          aws-region: ${{ env.REGION }}
+
+      - name: Terraform Init
+        working-directory: terraform
+        run: tofu init
+
+      - name: Terraform Plan
+        working-directory: terraform
+        run: tofu plan -out=tfplan
+
+      - name: Add plan to workflow summary
+        working-directory: terraform
+        run: |
+          echo "## Terraform Plan" >> $GITHUB_STEP_SUMMARY
+          tofu show -no-color tfplan >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload Plan Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tfplan
+          path: terraform/tfplan
+
+  apply:
+    name: Terraform Apply
+    needs: plan
+    runs-on: ubuntu-latest
+    environment: manual-approval
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download Plan Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: tfplan
+          path: terraform
+
+      - name: Setup OpenTofu
+        uses: opentofu/setup-opentofu@v1
+        with:
+          tofu_version: 1.9.1
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.ROLE_TO_ASSUME }}
+          aws-region: ${{ env.REGION }}
+
+      - name: OpenTofu Apply
+        working-directory: terraform
+        run: tofu apply -auto-approve tfplan
