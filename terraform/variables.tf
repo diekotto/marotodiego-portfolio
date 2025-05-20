@@ -21,3 +21,9 @@ variable "default_region" {
   type        = string
   default     = "eu-west-1"
 }
+
+variable "domain_name" {
+  description = "The apex domain you want to redirect, e.g. example.com"
+  type        = string
+  default     = "marotodiego.com"
+}

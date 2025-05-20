@@ -1,4 +1,3 @@
-# S3 bucket for static website hosting
 resource "aws_s3_bucket" "portfolio" {
   bucket        = "${var.prefix}-${var.default_region}-${var.project}"
   force_destroy = true
@@ -14,7 +13,6 @@ resource "aws_s3_bucket_website_configuration" "portfolio" {
   }
 }
 
-# CloudFront Origin Access Control (OAC)
 resource "aws_cloudfront_origin_access_control" "portfolio_oac" {
   name                              = "${var.client}-${var.project}-oac"
   description                       = "OAC for portfolio CloudFront to S3"
@@ -23,7 +21,6 @@ resource "aws_cloudfront_origin_access_control" "portfolio_oac" {
   signing_protocol                  = "sigv4"
 }
 
-# S3 bucket policy for CloudFront OAC
 resource "aws_s3_bucket_policy" "portfolio" {
   bucket = aws_s3_bucket.portfolio.id
   policy = jsonencode({
@@ -46,7 +43,6 @@ resource "aws_s3_bucket_policy" "portfolio" {
   })
 }
 
-# CloudFront cache policy (1 day TTL)
 resource "aws_cloudfront_cache_policy" "portfolio_1d" {
   name        = "portfolio-1d-cache"
   default_ttl = 86400
@@ -67,7 +63,6 @@ resource "aws_cloudfront_cache_policy" "portfolio_1d" {
   }
 }
 
-# CloudFront distribution
 resource "aws_cloudfront_distribution" "portfolio" {
   depends_on          = [aws_acm_certificate_validation.portfolio]
   aliases             = [aws_acm_certificate.portfolio.domain_name]
@@ -143,6 +138,7 @@ resource "aws_route53_record" "portfolio" {
 }
 
 resource "aws_route53_record" "apex" {
+  # This doesn't work with the CloudFront distribution
   zone_id = data.aws_route53_zone.portfolio.zone_id
   name    = ""
   type    = "A"
@@ -151,4 +147,109 @@ resource "aws_route53_record" "apex" {
     zone_id                = data.aws_route53_zone.portfolio.zone_id
     evaluate_target_health = false
   }
+}
+
+###############################################################################
+# 1. Certificate + DNS-validation
+###############################################################################
+resource "aws_acm_certificate" "redirect_cert" {
+  domain_name       = var.domain_name
+  validation_method = "DNS"
+}
+
+resource "aws_route53_record" "redirect_cert_validation" {
+  for_each = { for dvo in aws_acm_certificate.redirect_cert.domain_validation_options : dvo.domain_name => dvo }
+
+  zone_id = data.aws_route53_zone.portfolio.zone_id
+  name    = each.value.resource_record_name
+  type    = each.value.resource_record_type
+  ttl     = 300
+  records = [each.value.resource_record_value]
+}
+
+resource "aws_acm_certificate_validation" "redirect_cert" {
+  provider                = aws.cloudfront
+  certificate_arn         = aws_acm_certificate.redirect_cert.arn
+  validation_record_fqdns = [for record in aws_route53_record.redirect_cert_validation : record.fqdn]
+}
+
+###############################################################################
+# 2. REST API (MOCK integration for 301)
+###############################################################################
+resource "aws_api_gateway_rest_api" "redirect_api" {
+  name = "${var.prefix}-apex-redirect"
+  endpoint_configuration {
+    types = ["REGIONAL"]
+  }
+}
+
+# ANY on the ROOT resource
+resource "aws_api_gateway_method" "root_any" {
+  rest_api_id   = aws_api_gateway_rest_api.redirect_api.id
+  resource_id   = aws_api_gateway_rest_api.redirect_api.root_resource_id
+  http_method   = "ANY"
+  authorization = "NONE"
+}
+
+resource "aws_api_gateway_integration" "root_redirect" {
+  rest_api_id          = aws_api_gateway_rest_api.redirect_api.id
+  resource_id          = aws_api_gateway_rest_api.redirect_api.root_resource_id
+  http_method          = aws_api_gateway_method.root_any.http_method
+  type                 = "MOCK"
+  passthrough_behavior = "WHEN_NO_MATCH"
+
+  request_templates = {
+    "application/json" = "{\"statusCode\": 301}"
+  }
+}
+
+resource "aws_api_gateway_method_response" "root_response" {
+  rest_api_id = aws_api_gateway_rest_api.redirect_api.id
+  resource_id = aws_api_gateway_rest_api.redirect_api.root_resource_id
+  http_method = aws_api_gateway_method.root_any.http_method
+  status_code = "301"
+
+  response_models = {
+    "application/json" = "Empty"
+  }
+  response_parameters = {
+    "method.response.header.Location" = true
+  }
+}
+
+resource "aws_api_gateway_integration_response" "root_integration_response" {
+  rest_api_id = aws_api_gateway_rest_api.redirect_api.id
+  resource_id = aws_api_gateway_rest_api.redirect_api.root_resource_id
+  http_method = aws_api_gateway_method.root_any.http_method
+  status_code = "301"
+
+  response_templates = {
+    "application/json" = ""
+  }
+  response_parameters = {
+    # single-quoted string literal for Terraform interpolation
+    "method.response.header.Location" = "'https://www.${var.domain_name}'"
+  }
+}
+
+###############################################################################
+# 3. Deployment + Stage
+###############################################################################
+resource "aws_api_gateway_deployment" "redirect_deployment" {
+  rest_api_id = aws_api_gateway_rest_api.redirect_api.id
+
+  # force a new deployment whenever integration changes
+  triggers = {
+    redeploy = sha1(jsonencode(aws_api_gateway_rest_api.redirect_api))
+  }
+
+  depends_on = [
+    aws_api_gateway_integration_response.root_integration_response
+  ]
+}
+
+resource "aws_api_gateway_stage" "redirect_stage" {
+  rest_api_id   = aws_api_gateway_rest_api.redirect_api.id
+  deployment_id = aws_api_gateway_deployment.redirect_deployment.id
+  stage_name    = "prod"
 }
