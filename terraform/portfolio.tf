@@ -265,8 +265,8 @@ resource "aws_route53_record" "redirect" {
   name    = var.domain_name
   type    = "A"
   alias {
-    name                   = aws_api_gateway_domain_name.redirect_custom_domain.cloudfront_domain_name
-    zone_id                = aws_api_gateway_domain_name.redirect_custom_domain.cloudfront_zone_id
+    name                   = aws_api_gateway_domain_name.redirect_custom_domain.regional_domain_name
+    zone_id                = aws_api_gateway_domain_name.redirect_custom_domain.regional_zone_id
     evaluate_target_health = false
   }
 }
