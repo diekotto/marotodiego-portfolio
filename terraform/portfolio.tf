@@ -141,3 +141,14 @@ resource "aws_route53_record" "portfolio" {
     evaluate_target_health = false
   }
 }
+
+resource "aws_route53_record" "apex" {
+  zone_id = data.aws_route53_zone.portfolio.zone_id
+  name    = "@"
+  type    = "A"
+  alias {
+    name                   = aws_route53_record.portfolio.fqdn
+    zone_id                = data.aws_route53_zone.portfolio.zone_id
+    evaluate_target_health = false
+  }
+}
