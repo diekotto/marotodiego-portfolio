@@ -4,22 +4,9 @@ import { Badge } from '@/components/ui/badge';
 export default function Experience() {
   const experiences = [
     {
-      title: 'Cloud Architect',
-      company: 'Softtek',
-      period: 'Mar 2022 – Present',
-      description:
-        'Lead architect designing AWS-native, multi-account infrastructures using Terraform and GitHub Actions.',
-      achievements: [
-        'Designed and delivered AWS-native, multi-account architectures with Terraform and GitHub Actions',
-        'Championed serverless & micro-services patterns, slashing deployment times by 60%',
-        'Mentored 10+ engineers in cloud-native design, security, and IaC best practices',
-      ],
-      technologies: ['AWS', 'Terraform', 'GitHub Actions', 'Serverless', 'Microservices'],
-    },
-    {
       title: 'Cloud & Software Engineer',
-      company: 'Insanity Dev',
-      period: 'Jan 2019 – Present',
+      company: 'marotodiego.com',
+      period: '+6 years - Freelance',
       description:
         'Engineer focused on Kubernetes-based micro-services and automated deployments for fintech applications.',
       achievements: [
@@ -27,18 +14,31 @@ export default function Experience() {
         'Automated blue/green deployments and stress-testing pipelines, ensuring 99.99% uptime',
         'Led AWS cost-optimization initiative, cutting monthly spend by 30%',
       ],
-      technologies: ['Kubernetes', 'Node.js', 'TypeScript', 'AWS', 'Automation'],
+      technologies: ['Kubernetes', 'Node.js', 'TypeScript', 'AWS', 'Automation', 'CI/CD', 'EKS', 'MongoDB'],
+    },
+    {
+      title: 'Cloud Architect',
+      company: 'Softtek',
+      period: '4 years',
+      description:
+        'Lead architect designing AWS-native, multi-account infrastructures using Terraform and GitHub Actions.',
+      achievements: [
+        'Designed and delivered AWS-native, multi-account architectures with Terraform and GitHub Actions',
+        'Championed serverless & micro-services patterns, slashing deployment times by 60%',
+        'Mentored 10+ engineers in cloud-native design, security, and IaC best practices',
+      ],
+      technologies: ['AWS', 'Terraform', 'GitHub Actions', 'Serverless', 'Microservices', 'ECS - Fargate'],
     },
     {
       title: 'Software Engineer',
       company: 'Bit2Me',
-      period: 'Apr 2020 – Mar 2022',
-      description: 'Developed crypto-exchange services and migrated workloads to GKE to boost deployment frequency.',
+      period: '2 years',
+      description: 'Developed crypto-exchange services and helped operations to optimize performance.',
       achievements: [
         'Created crypto-exchange services with NestJS, PostgreSQL & MongoDB',
-        'Migrated legacy workloads to GKE, improving release frequency from weekly to daily',
+        'Highly optimized for performance, parallel pod processing in Kubernetes using Redis as semaphore',
       ],
-      technologies: ['NestJS', 'PostgreSQL', 'MongoDB', 'GKE', 'Kubernetes'],
+      technologies: ['NestJS', 'PostgreSQL', 'MongoDB', 'Kubernetes', 'TypeScript', 'Redis'],
     },
   ];
 

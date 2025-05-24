@@ -2,7 +2,7 @@ import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Certifications() {
   const certifications = [
-    'AWS Certified Solutions Architect – Associate',
+    'AWS Certified Solutions Architect - Associate',
     'HashiCorp Certified: Terraform Associate',
     'Docker Compose & Swarm',
     'Pentesting en Seguridad Informática (Detecta, Defiende 2023)',

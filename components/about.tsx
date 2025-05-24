@@ -32,8 +32,7 @@ export default function About() {
                 <div>
                   <h3 className="text-xl font-semibold mb-2">Infrastructure as Code</h3>
                   <p className="text-slate-700 dark:text-slate-300">
-                    Expertise in using Terraform, CloudFormation, and Pulumi to automate infrastructure provisioning and
-                    management.
+                    Expertise in using Terraform, and CDK to automate infrastructure provisioning and management.
                   </p>
                 </div>
               </CardContent>

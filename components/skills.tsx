@@ -5,23 +5,54 @@ export default function Skills() {
   const skillCategories = [
     {
       title: 'AWS & Serverless',
-      skills: ['Lambda', 'API Gateway', 'DynamoDB', 'SQS', 'SNS'],
+      skills: ['Lambda', 'API Gateway', 'SQS', 'SNS', 'ECS', 'EKS', 'RDS'],
     },
     {
       title: 'Infrastructure as Code',
-      skills: ['Terraform', 'CloudFormation'],
+      skills: ['Terraform', 'CloudFormation', 'CDK', 'Projen'],
     },
     {
       title: 'Containers & Orchestration',
-      skills: ['Docker', 'Kubernetes', 'GitHub Actions workflows'],
+      skills: ['Docker', 'Kubernetes'],
     },
     {
       title: 'Languages',
       skills: ['TypeScript / Node.js', 'Python', 'Bash'],
     },
     {
+      title: 'Databases & Caching',
+      skills: ['PostgreSQL', 'MongoDB', 'Redis', 'DynamoDB', 'InfluxDB'],
+    },
+    {
       title: 'DevOps DNA',
-      skills: ['CI/CD pipelines', 'observability', 'automated testing', 'security hardening'],
+      skills: ['Github Actions workflows', 'CI/CD pipelines', 'automated testing', 'security hardening'],
+    },
+    {
+      title: 'Observability & Monitoring',
+      skills: ['Prometheus', 'Grafana', 'ELK Stack', 'CloudWatch', 'Sentry', 'New Relic'],
+    },
+    {
+      title: 'Scripting & Automation',
+      skills: [
+        'Python scripts',
+        'Bash automation',
+        'Data mining',
+        'Pattern recognition',
+        'Selenium',
+        'Data extraction',
+      ],
+    },
+    {
+      title: 'Security & Compliance',
+      skills: [
+        'IAM policies',
+        'VPC security',
+        'KMS encryption',
+        'AWS Security Best Practices',
+        'Pentesting',
+        'Api Abuse',
+        'OWASP',
+      ],
     },
   ];
 

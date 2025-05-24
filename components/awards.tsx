@@ -4,15 +4,15 @@ export default function Awards() {
   const awards = [
     {
       emoji: '🥈',
-      text: 'Silver League – Hypersonic Hackathon 2016',
+      text: 'Silver League - Hypersonic Hackathon 2016',
     },
     {
       emoji: '🏆',
-      text: 'Best Tech Business Project – Yuzz Alicante 2015',
+      text: 'Best Tech Business Project - Yuzz Alicante 2015',
     },
     {
       emoji: '🏅',
-      text: 'Best Applied Science & Technology Project (regional)',
+      text: 'Best Applied Science & Technology Project - Mooqia 2015',
     },
   ];
 

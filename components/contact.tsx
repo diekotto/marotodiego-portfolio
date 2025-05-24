@@ -78,7 +78,7 @@ export default function Contact() {
             <CardContent>
               <CardDescription>
                 <a href="tel:+1234567890" className="hover:text-blue-600 transition-colors">
-                  +1 (234) 567-890
+                  +34 --
                 </a>
               </CardDescription>
             </CardContent>
@@ -92,7 +92,7 @@ export default function Contact() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>Madrid, Spain</CardDescription>
+              <CardDescription>Alicante, Spain</CardDescription>
             </CardContent>
           </Card>
         </div>
