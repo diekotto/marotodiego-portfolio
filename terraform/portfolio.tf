@@ -42,7 +42,26 @@ resource "aws_s3_bucket_policy" "portfolio" {
     ]
   })
 }
-
+resource "aws_cloudfront_cache_policy" "portfolio_1d" {
+  name        = "portfolio-cache"
+  # Cache assets for one year at the edge to minimise TTFB on repeat visits
+  default_ttl = 31536000
+  max_ttl     = 31536000
+  min_ttl     = 0
+  parameters_in_cache_key_and_forwarded_to_origin {
+    cookies_config {
+      cookie_behavior = "none"
+    }
+    headers_config {
+      header_behavior = "none"
+    }
+    query_strings_config {
+      query_string_behavior = "none"
+    }
+    enable_accept_encoding_gzip   = true
+    enable_accept_encoding_brotli = true
+  }
+}
 resource "aws_cloudfront_cache_policy" "portfolio_cache" {
   name        = "portfolio-cache"
   # Cache assets for one year at the edge to minimise TTFB on repeat visits
