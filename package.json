@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "NEXT_TELEMETRY_DISABLED=1 next dev",
-    "build": "NEXT_TELEMETRY_DISABLED=1 next build",
+    "build": "NEXT_TELEMETRY_DISABLED=1 next build && NEXT_TELEMETRY_DISABLED=1 next export -o dist",
+    "export": "NEXT_TELEMETRY_DISABLED=1 next export -o dist",
     "start": "NEXT_TELEMETRY_DISABLED=1 next start",
     "lint": "next lint",
     "fmt": "prettier --write .",
