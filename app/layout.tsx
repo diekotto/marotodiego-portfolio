@@ -7,9 +7,9 @@ import Navbar from '@/components/navbar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Diego Maroto | Cloud Architect & DevOps Engineer',
+  title: 'Diego Maroto | Cloud & DevOps Architect · AWS Solutions Architect · Security-First Engineer',
   description:
-    'Professional portfolio of Diego Maroto, specialized in designing and building scalable, resilient and secure cloud infrastructure.',
+    'I build resilient, highly-scalable cloud platforms that turn business problems into automated, serverless, and container-driven solutions. With deep expertise in AWS, Terraform, and CI/CD automation, I enable teams to ship faster and sleep better. Passionate about clean architectures, mentoring, and driving a security-first culture.',
   generator: 'v0.dev',
 };
 

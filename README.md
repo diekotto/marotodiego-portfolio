@@ -1,6 +1,8 @@
-# Personal Portfolio - Cloud Architect & DevOps Engineer
+# Personal Portfolio - Cloud & DevOps Architect · AWS Solutions Architect · Security-First Engineer
 
 A modern, responsive portfolio website built with React, Shadcn, and Tailwind CSS. This portfolio showcases professional experience, technical skills, projects, and technical articles.
+
+I build resilient, highly-scalable cloud platforms that turn business problems into automated, serverless, and container-driven solutions. With deep expertise in AWS, Terraform, and CI/CD automation, I enable teams to ship faster and sleep better. Passionate about clean architectures, mentoring, and driving a security-first culture.
 
 ## 🚀 Features
 
