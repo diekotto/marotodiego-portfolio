@@ -40,12 +40,12 @@ jobs:
           role-to-assume: ${{ env.ROLE_TO_ASSUME }}
           aws-region: ${{ env.REGION }}
 
-      - name: Upload index.html with no-cache
+      - name: Upload HTML files with no-cache
         run: |
-          aws s3 cp dist/index.html s3://md-eu-west-1-portfolio/index.html \
+          aws s3 cp out/*.html s3://md-eu-west-1-portfolio/ \
             --cache-control "max-age=0,no-cache,no-store,must-revalidate"
 
       - name: Upload remaining assets
         run: |
-          aws s3 sync dist/ s3://md-eu-west-1-portfolio/ \
+          aws s3 sync out/ s3://md-eu-west-1-portfolio/ \
             --delete --cache-control 'max-age=31536000, immutable' --exclude '*.html'

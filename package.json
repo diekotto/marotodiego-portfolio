@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NEXT_TELEMETRY_DISABLED=1 next dev",
-    "build": "NEXT_TELEMETRY_DISABLED=1 next build && NEXT_TELEMETRY_DISABLED=1 next export -o dist",
-    "export": "NEXT_TELEMETRY_DISABLED=1 next export -o dist",
-    "start": "NEXT_TELEMETRY_DISABLED=1 next start",
+    "dev": "next dev",
+    "prebuild": "next telemetry disable",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "fmt": "prettier --write .",
     "prepare": "husky install"
