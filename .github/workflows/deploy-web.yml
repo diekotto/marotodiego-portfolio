@@ -42,8 +42,10 @@ jobs:
 
       - name: Upload HTML files with no-cache
         run: |
-          aws s3 cp out/*.html s3://md-eu-west-1-portfolio/ \
-            --cache-control "max-age=0,no-cache,no-store,must-revalidate"
+          aws s3 sync out/ s3://md-eu-west-1-portfolio/ \
+            --cache-control "max-age=0,no-cache,no-store,must-revalidate" \
+            --exclude "*" \
+            --include "*.html"
 
       - name: Upload remaining assets
         run: |
