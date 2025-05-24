@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowDownIcon, GithubIcon, LinkedinIcon, MailIcon, RssIcon } from 'lucide-react';
 
 export default function Hero() {
@@ -8,6 +9,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-slate-100 dark:from-slate-900 dark:to-blue-950 -z-10" />
 
       <div className="container mx-auto px-4 py-12 flex flex-col items-center text-center z-10">
+        <Image src="/images/penguin-logo.png" alt="Penguin logo" width={120} height={120} className="mx-auto mb-4" />
         <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
           <span className="block">Diego Maroto</span>
           <span className="block mt-2 text-blue-600 dark:text-blue-400">
@@ -15,11 +17,9 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="text-xl md:text-2xl max-w-3xl mb-8 text-slate-700 dark:text-slate-300">
-          I build resilient, highly-scalable cloud platforms that turn business problems into automated, serverless, and
-          container-driven solutions. With deep expertise in AWS, Terraform, and CI/CD automation, I enable teams to
-          ship faster and sleep better. Passionate about clean architectures, mentoring, and driving a security-first
-          culture.
+        <p className="text-lg md:text-xl max-w-2xl mb-8 text-slate-700 dark:text-slate-300">
+          I craft resilient cloud platforms that automate workflows and scale securely. Specializing in AWS, Terraform
+          and CI/CD with a security-first mindset.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
