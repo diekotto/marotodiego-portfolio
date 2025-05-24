@@ -10,11 +10,16 @@ export default function Hero() {
       <div className="container mx-auto px-4 py-12 flex flex-col items-center text-center z-10">
         <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
           <span className="block">Diego Maroto</span>
-          <span className="block mt-2 text-blue-600 dark:text-blue-400">Cloud Architect & DevOps Engineer</span>
+          <span className="block mt-2 text-blue-600 dark:text-blue-400">
+            Cloud & DevOps Architect · AWS Solutions Architect · Security-First Engineer
+          </span>
         </h1>
 
         <p className="text-xl md:text-2xl max-w-3xl mb-8 text-slate-700 dark:text-slate-300">
-          Specialized in designing and building scalable, resilient and secure cloud infrastructure.
+          I build resilient, highly-scalable cloud platforms that turn business problems into automated, serverless, and
+          container-driven solutions. With deep expertise in AWS, Terraform, and CI/CD automation, I enable teams to
+          ship faster and sleep better. Passionate about clean architectures, mentoring, and driving a security-first
+          culture.
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center mb-12">
