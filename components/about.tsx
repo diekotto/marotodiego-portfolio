@@ -13,16 +13,15 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <p className="text-lg mb-6 text-slate-700 dark:text-slate-300">
-              I'm a passionate Cloud Architect and DevOps Engineer with extensive experience in designing and
-              implementing scalable, resilient, and secure cloud infrastructure solutions.
+              I build resilient, highly-scalable cloud platforms that turn business problems into automated, serverless,
+              and container-driven solutions.
             </p>
             <p className="text-lg mb-6 text-slate-700 dark:text-slate-300">
-              With a strong background in Node.js, TypeScript, Python, and serverless architectures, I help
-              organizations optimize their cloud operations, automate workflows, and implement robust CI/CD pipelines.
+              With deep expertise in AWS, Terraform, and CI/CD automation, I enable teams to ship faster and sleep
+              better.
             </p>
             <p className="text-lg text-slate-700 dark:text-slate-300">
-              My approach combines technical expertise with a deep understanding of business needs, ensuring that the
-              infrastructure solutions I design not only meet technical requirements but also drive business value.
+              Passionate about clean architectures, mentoring, and driving a security-first culture.
             </p>
           </div>
 
