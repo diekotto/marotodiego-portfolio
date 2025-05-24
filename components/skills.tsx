@@ -4,28 +4,24 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export default function Skills() {
   const skillCategories = [
     {
-      title: 'Cloud Platforms',
-      skills: ['AWS', 'Azure', 'Google Cloud', 'DigitalOcean', 'Heroku'],
+      title: 'AWS & Serverless',
+      skills: ['Lambda', 'API Gateway', 'DynamoDB', 'SQS', 'SNS'],
     },
     {
-      title: 'DevOps & CI/CD',
-      skills: ['Docker', 'Kubernetes', 'Jenkins', 'GitHub Actions', 'GitLab CI', 'ArgoCD', 'Terraform', 'Ansible'],
+      title: 'Infrastructure as Code',
+      skills: ['Terraform', 'CloudFormation'],
     },
     {
-      title: 'Programming Languages',
-      skills: ['JavaScript', 'TypeScript', 'Python', 'Bash', 'Go'],
+      title: 'Containers & Orchestration',
+      skills: ['Docker', 'Kubernetes', 'GitHub Actions workflows'],
     },
     {
-      title: 'Frameworks & Technologies',
-      skills: ['Node.js', 'Express', 'Next.js', 'FastAPI', 'Serverless Framework', 'AWS CDK'],
+      title: 'Languages',
+      skills: ['TypeScript / Node.js', 'Python', 'Bash'],
     },
     {
-      title: 'Monitoring & Observability',
-      skills: ['Prometheus', 'Grafana', 'ELK Stack', 'Datadog', 'New Relic'],
-    },
-    {
-      title: 'Databases & Storage',
-      skills: ['PostgreSQL', 'MongoDB', 'DynamoDB', 'Redis', 'S3', 'Elasticsearch'],
+      title: 'DevOps DNA',
+      skills: ['CI/CD pipelines', 'observability', 'automated testing', 'security hardening'],
     },
   ];
 
@@ -33,10 +29,10 @@ export default function Skills() {
     <section id="skills" className="py-20 bg-slate-50 dark:bg-slate-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills & Technologies</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Core Stack &amp; Superpowers</h2>
           <div className="h-1 w-20 bg-blue-600 mx-auto"></div>
           <p className="mt-6 text-lg max-w-3xl mx-auto text-slate-700 dark:text-slate-300">
-            A comprehensive set of technical skills and expertise that I bring to every project.
+            My go-to tools and areas of expertise for building resilient, automated cloud platforms.
           </p>
         </div>
 
