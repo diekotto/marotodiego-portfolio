@@ -11,7 +11,7 @@ export default function Community() {
       title: 'Readme AI',
       description:
         'AI-powered CLI that autogenerates rich, customizable README files from any repo; supports OpenAI, Anthropic, Gemini, Ollama, and even offline mode. My contributions: Shipped a GitHub-Action wrapper, added Spanish locale, and refactored the CLI to support larger Claude context windows while tightening tests.',
-      image: '/placeholder.svg?height=400&width=600',
+      image: '/images/community/readme-ai-logo.svg?height=400&width=600',
       tags: ['CLI', 'GitHub Action'],
       githubUrl: 'https://github.com/eli64s/readme-ai',
       liveUrl: 'https://github.com/eli64s/readme-ai',
@@ -20,7 +20,7 @@ export default function Community() {
       title: 'Size Limit',
       description:
         'Performance-budget tool for JavaScript that runs in CI, calculates real download & exec cost, and fails the build if a PR tips the budget; includes tree-shaking and time-based metrics. My contributions: Fixed PNPM-workspace resolution, added Vite example, and triaged bundle-size regressions across three major frameworks.',
-      image: '/placeholder.svg?height=400&width=600',
+      image: '/images/community/size-limit-logo.svg?height=400&width=600',
       tags: ['JavaScript', 'CI'],
       githubUrl: 'https://github.com/ai/size-limit',
       liveUrl: 'https://github.com/ai/size-limit',
@@ -38,8 +38,8 @@ export default function Community() {
         <div className="grid md:grid-cols-2 gap-8">
           {contributions.map((project, index) => (
             <Card key={index} className="overflow-hidden flex flex-col h-full">
-              <div className="relative h-48 w-full">
-                <Image src={project.image} alt={project.title} fill className="object-cover" />
+              <div className="relative w-full aspect-[3/2]">
+                <Image src={project.image} alt={project.title} fill className="object-contain" />
               </div>
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>
