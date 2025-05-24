@@ -8,40 +8,40 @@ import Image from 'next/image';
 export default function Projects() {
   const projects = [
     {
-      title: 'Cloud Cost Optimization Platform',
+      title: 'Personal Portfolio',
       description:
-        'Developed a platform that analyzes cloud resource usage and provides recommendations for cost optimization, resulting in 30% cost reduction for clients.',
+        'Modern, fully-responsive site that showcases my work, skills and writing. Dark-mode-first, smooth-scroll navigation and Terraform IaC for one-command infra replication. Serves as a live demo of my front-end chops and cloud discipline.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['AWS', 'Terraform', 'React', 'Node.js', 'PostgreSQL'],
-      githubUrl: '#',
-      liveUrl: '#',
+      tags: ['React', 'Vite', 'Tailwind', 'shadcn/ui', 'AWS'],
+      githubUrl: 'https://github.com/diekotto/marotodiego-portfolio',
+      liveUrl: 'https://marotodiego.com',
     },
     {
-      title: 'Serverless Microservices Architecture',
+      title: 'Code Digest Action',
       description:
-        'Designed and implemented a serverless architecture for a fintech application, improving scalability and reducing operational costs by 40%.',
+        'Generates an LLM-optimised digest of any repo—metadata, directory tree and per-file summary for lightning-fast onboarding. Ships secure artifact retention, configurable ignore globs and works both as uses: diekotto/code-digest-action@v2 or npx @diekotto/code-digest.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'Serverless Framework', 'TypeScript'],
-      githubUrl: '#',
-      liveUrl: '#',
+      tags: ['GitHub Action', 'CLI', 'Node.js'],
+      githubUrl: 'https://github.com/diekotto/code-digest-action',
+      liveUrl: 'https://github.com/diekotto/code-digest-action',
     },
     {
-      title: 'Multi-Cloud Kubernetes Platform',
+      title: 'AI Pull Review',
       description:
-        'Built a Kubernetes platform that spans multiple cloud providers, ensuring high availability and disaster recovery capabilities.',
+        'Turns every PR into a conversation with Claude—flags bugs, reviews architecture, checks docs and estimates costs, then posts rich comments back on the PR. Invited by Ready Tensor to showcase this project in the Agentic AI Innovation Challenge 2025.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['Kubernetes', 'Terraform', 'Helm', 'GitOps', 'Prometheus'],
-      githubUrl: '#',
-      liveUrl: '#',
+      tags: ['GitHub Action', 'Anthropic', 'Node.js'],
+      githubUrl: 'https://github.com/diekotto/ai-pull-review',
+      liveUrl: 'https://github.com/diekotto/ai-pull-review',
     },
     {
-      title: 'Automated CI/CD Pipeline',
+      title: 'Sonar Scanner Analysis',
       description:
-        'Implemented a fully automated CI/CD pipeline for a large e-commerce platform, reducing deployment time from days to minutes.',
+        'Spins up a local SonarQube server + scanner inside CI, runs analysis, and uploads a Markdown report artifact—no external server required. Perfect for private or air-gapped repos; v1 delivers full quality-gate status, metrics and detailed issue breakdowns.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['GitHub Actions', 'Docker', 'AWS', 'Node.js', 'Jest'],
-      githubUrl: '#',
-      liveUrl: '#',
+      tags: ['GitHub Action', 'Docker', 'SonarQube'],
+      githubUrl: 'https://github.com/diekotto/sonar-scanner-analysis',
+      liveUrl: 'https://github.com/diekotto/sonar-scanner-analysis',
     },
   ];
 
