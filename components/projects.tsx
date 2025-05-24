@@ -12,7 +12,7 @@ export default function Projects() {
       description:
         'Blueprint that demonstrates Redlock-based distributed locking and cron scheduling across micro-services, with Docker-Compose & K8s manifests for local or cluster testing. Archived Jan 2025 but remains a solid reference for fault-tolerant job orchestration.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['Node.js', 'Redis', 'Kubernetes'],
+      tags: ['Node.js', 'Redis', 'Kubernetes', 'Minikube', 'Parallel Jobs', 'Docker'],
       githubUrl: 'https://github.com/diekotto/redlock-k8s-laboratory',
       liveUrl: 'https://github.com/diekotto/redlock-k8s-laboratory',
     },
@@ -21,7 +21,7 @@ export default function Projects() {
       description:
         'Triggers repository_dispatch events so one workflow can fan-out to other repos, passing custom JSON payloads. Single-step usage (uses: diekotto/repository-dispatch@v1) and clear error handling/PAT support.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['GitHub Action', 'Node.js'],
+      tags: ['GitHub Action', 'Node.js', 'Tools', 'Automation'],
       githubUrl: 'https://github.com/diekotto/repository-dispatch',
       liveUrl: 'https://github.com/diekotto/repository-dispatch',
     },
@@ -30,7 +30,7 @@ export default function Projects() {
       description:
         'Generates an LLM-ready digest of any repo: metadata, directory map and per-file summary—ideal for onboarding or AI agents. Works via GH Action or npx @diekotto/code-digest; artifact retention and glob ignores built-in.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['GitHub Action', 'CLI', 'Node.js'],
+      tags: ['GitHub Action', 'CLI', 'Node.js', 'Automation', 'AI'],
       githubUrl: 'https://github.com/diekotto/code-digest-action',
       liveUrl: 'https://github.com/diekotto/code-digest-action',
     },
@@ -39,7 +39,7 @@ export default function Projects() {
       description:
         'Turns every PR into a conversation with Claude—flags bugs, reviews architecture, checks docs and estimates cost, then posts rich comments. **Invited by Ready Tensor to showcase this project in the Agentic AI Innovation Challenge 2025.** Multiple scan depths, already adopted by several orgs.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['GitHub Action', 'CLI', 'Node.js', 'Anthropic'],
+      tags: ['GitHub Action', 'CLI', 'Node.js', 'Anthropic', 'AI', 'Automation'],
       githubUrl: 'https://github.com/diekotto/ai-pull-review',
       liveUrl: 'https://github.com/diekotto/ai-pull-review',
     },
@@ -48,7 +48,7 @@ export default function Projects() {
       description:
         'Spins up SonarQube + Scanner inside CI, runs analysis and uploads a Markdown report artifact—no external server needed. Perfect for private or air-gapped repos; v1 delivers full quality-gate metrics and issue breakdowns.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['GitHub Action', 'Docker-in-Docker', 'SonarQube'],
+      tags: ['GitHub Action', 'Docker', 'SonarQube', 'CI/CD', 'Automation', 'Open Source'],
       githubUrl: 'https://github.com/diekotto/sonar-scanner-analysis',
       liveUrl: 'https://github.com/diekotto/sonar-scanner-analysis',
     },
