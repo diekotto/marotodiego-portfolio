@@ -1,6 +1,8 @@
-# Personal Portfolio - Cloud Architect & DevOps Engineer
+# Personal Portfolio - Cloud & DevOps Architect · AWS Solutions Architect · Security-First Engineer
 
 A modern, responsive portfolio website built with React, Shadcn, and Tailwind CSS. This portfolio showcases professional experience, technical skills, projects, and technical articles.
+
+I build resilient, highly-scalable cloud platforms that turn business problems into automated, serverless, and container-driven solutions. With deep expertise in AWS, Terraform, and CI/CD automation, I enable teams to ship faster and sleep better. Passionate about clean architectures, mentoring, and driving a security-first culture.
 
 ## 🚀 Features
 
@@ -11,8 +13,10 @@ A modern, responsive portfolio website built with React, Shadcn, and Tailwind CS
 - Section-based layout:
   - Professional introduction
   - Technical skills showcase
+  - Certifications
   - Work experience timeline
   - Personal projects gallery
+  - Community contributions section
   - Technical articles section
 
 ## 🛠️ Tech Stack
@@ -90,8 +94,10 @@ src/
 - **Navbar**: Fixed navigation with smooth scroll to sections
 - **Hero**: Introduction section with social links
 - **Skills**: Technical skills displayed in card format
+- **Certifications**: Professional certifications highlighting expertise
 - **Experience**: Professional experience with detailed descriptions
 - **Projects**: Personal projects showcase with GitHub links
+- **Community Contributions**: Highlights open source projects I've helped shape
 - **Articles**: Technical articles with links to full content
 
 ## 📱 Responsive Design
@@ -132,13 +138,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📞 Contact
+## Community Contributions
+
+| Project        | What It Does                                                                                                                                                                             | My Touch                                                                                                                                       | Link                                  |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| **Readme AI**  | AI-powered CLI that autogenerates rich, customizable README files from any repo; supports OpenAI, Anthropic, Gemini, Ollama, and even offline mode.                                      | Shipped a GitHub-Action wrapper, added Spanish locale, and refactored the CLI to support larger Claude context windows while tightening tests. | <https://github.com/eli64s/readme-ai> |
+| **Size Limit** | Performance-budget tool for JavaScript that runs in CI, calculates real download & exec cost, and fails the build if a PR tips the budget; includes tree-shaking and time-based metrics. | Fixed PNPM-workspace resolution, added Vite example, and triaged bundle-size regressions across three major frameworks.                        | <https://github.com/ai/size-limit>    |
+
+## Find Me Online
 
 For any questions or suggestions, please reach out:
 
-- LinkedIn: [Your LinkedIn]
-- GitHub: [Your GitHub]
-- Email: [Your Email]
+- GitHub: [diekotto](https://github.com/diekotto)
+- LinkedIn: [diegomaroto](https://www.linkedin.com/in/diegomaroto)
+- Blog: [dev.to/diek](https://dev.to/diek)
+- Email: hola@marotodiego.com
 
 ---
 
