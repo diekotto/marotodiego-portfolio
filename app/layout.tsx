@@ -7,10 +7,13 @@ import Navbar from '@/components/navbar';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Diego Maroto | Cloud & DevOps Architect · AWS Solutions Architect · Security-First Engineer',
+  title: 'Diego Maroto | Cloud & DevOps Architect',
   description:
-    'I build resilient, highly-scalable cloud platforms that turn business problems into automated, serverless, and container-driven solutions. With deep expertise in AWS, Terraform, and CI/CD automation, I enable teams to ship faster and sleep better. Passionate about clean architectures, mentoring, and driving a security-first culture.',
-  generator: 'v0.dev',
+    'I craft resilient cloud platforms that automate workflows and scale securely. Specializing in AWS, Terraform and CI/CD with a security-first mindset.',
+  generator: 'v0.dev, OpenAI Codex, Github Copilot Agent, and more',
+  icons: {
+    icon: '/cloud-icon.svg',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
