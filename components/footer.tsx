@@ -52,15 +52,6 @@ export default function Footer() {
 
         <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-slate-400 text-sm">&copy; {currentYear} Diego Maroto. All rights reserved.</p>
-
-          <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="text-sm text-slate-400 hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="text-sm text-slate-400 hover:text-white transition-colors">
-              Terms of Service
-            </Link>
-          </div>
         </div>
       </div>
     </footer>

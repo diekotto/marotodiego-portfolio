@@ -8,11 +8,11 @@ export default function Experience() {
       company: 'marotodiego.com',
       period: '+6 years - Freelance',
       description:
-        'Engineer focused on Kubernetes-based micro-services and automated deployments for fintech applications.',
+        'Engineer focused on Kubernetes-based micro-services, serverless low-cost cloud native solutions and automated deployments.',
       achievements: [
         'Built Kubernetes-based micro-services in Node.js & TypeScript for high-traffic fintech apps',
-        'Automated blue/green deployments and stress-testing pipelines, ensuring 99.99% uptime',
-        'Led AWS cost-optimization initiative, cutting monthly spend by 30%',
+        'Automated blue/green deployments and stress-testing pipelines',
+        'Led AWS cost-optimization initiative',
       ],
       technologies: ['Kubernetes', 'Node.js', 'TypeScript', 'AWS', 'Automation', 'CI/CD', 'EKS', 'MongoDB'],
     },

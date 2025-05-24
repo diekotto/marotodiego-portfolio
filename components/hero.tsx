@@ -12,9 +12,7 @@ export default function Hero() {
         <Image src="/images/penguin-logo.png" alt="Penguin logo" width={120} height={120} className="mx-auto mb-4" />
         <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
           <span className="block">Diego Maroto</span>
-          <span className="block mt-2 text-blue-600 dark:text-blue-400">
-            Cloud & DevOps Architect · AWS Solutions Architect · Security-First Engineer
-          </span>
+          <span className="block mt-2 text-blue-600 dark:text-blue-400">Cloud & DevOps Architect</span>
         </h1>
 
         <p className="text-lg md:text-xl max-w-2xl mb-8 text-slate-700 dark:text-slate-300">
