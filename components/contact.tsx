@@ -100,7 +100,9 @@ export default function Contact() {
         <Card className="mt-12 max-w-2xl mx-auto">
           <CardHeader>
             <CardTitle>Send a Message</CardTitle>
-            <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
+            <CardDescription>
+              Fill out the form below and I&apos;ll get back to you as soon as possible.
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">

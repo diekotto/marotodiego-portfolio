@@ -3,6 +3,7 @@ import About from '@/components/about';
 import Skills from '@/components/skills';
 import Certifications from '@/components/certifications';
 import Projects from '@/components/projects';
+import Community from '@/components/community';
 import Experience from '@/components/experience';
 import Education from '@/components/education';
 import Awards from '@/components/awards';
@@ -17,6 +18,7 @@ export default function Home() {
       <Skills />
       <Certifications />
       <Projects />
+      <Community />
       <Experience />
       <Education />
       <Awards />

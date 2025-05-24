@@ -16,6 +16,7 @@ I build resilient, highly-scalable cloud platforms that turn business problems i
   - Certifications
   - Work experience timeline
   - Personal projects gallery
+  - Community contributions section
   - Technical articles section
 
 ## 🛠️ Tech Stack
@@ -96,6 +97,7 @@ src/
 - **Certifications**: Professional certifications highlighting expertise
 - **Experience**: Professional experience with detailed descriptions
 - **Projects**: Personal projects showcase with GitHub links
+- **Community Contributions**: Highlights open source projects I've helped shape
 - **Articles**: Technical articles with links to full content
 
 ## 📱 Responsive Design
@@ -135,6 +137,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Community Contributions
+
+| Project        | What It Does                                                                                                                                                                             | My Touch                                                                                                                                       | Link                                  |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| **Readme AI**  | AI-powered CLI that autogenerates rich, customizable README files from any repo; supports OpenAI, Anthropic, Gemini, Ollama, and even offline mode.                                      | Shipped a GitHub-Action wrapper, added Spanish locale, and refactored the CLI to support larger Claude context windows while tightening tests. | <https://github.com/eli64s/readme-ai> |
+| **Size Limit** | Performance-budget tool for JavaScript that runs in CI, calculates real download & exec cost, and fails the build if a PR tips the budget; includes tree-shaking and time-based metrics. | Fixed PNPM-workspace resolution, added Vite example, and triaged bundle-size regressions across three major frameworks.                        | <https://github.com/ai/size-limit>    |
 
 ## Find Me Online
 
