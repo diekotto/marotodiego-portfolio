@@ -44,7 +44,7 @@ resource "aws_s3_bucket_policy" "portfolio" {
 }
 
 resource "aws_cloudfront_cache_policy" "portfolio_cache" {
-  name        = "portfolio-cache"
+  name = "portfolio-cache"
   # Cache assets for one year at the edge to minimise TTFB on repeat visits
   default_ttl = 31536000
   max_ttl     = 31536000
@@ -85,6 +85,7 @@ resource "aws_cloudfront_distribution" "portfolio" {
     target_origin_id       = "portfolio-s3"
     viewer_protocol_policy = "redirect-to-https"
     cache_policy_id        = aws_cloudfront_cache_policy.portfolio_cache.id
+    compress               = true
   }
 
   # Use all CloudFront edge locations to improve initial server response time
@@ -259,7 +260,7 @@ resource "aws_api_gateway_domain_name" "redirect_custom_domain" {
 
 resource "aws_api_gateway_base_path_mapping" "redirect_base_path" {
   domain_name = aws_api_gateway_domain_name.redirect_custom_domain.domain_name
-  api_id = aws_api_gateway_rest_api.redirect_api.id
+  api_id      = aws_api_gateway_rest_api.redirect_api.id
   stage_name  = aws_api_gateway_stage.redirect_stage.stage_name
 }
 
