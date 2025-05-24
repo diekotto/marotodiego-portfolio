@@ -4,43 +4,41 @@ import { Badge } from '@/components/ui/badge';
 export default function Experience() {
   const experiences = [
     {
-      title: 'Senior Cloud Architect',
-      company: 'TechCloud Solutions',
-      period: '2020 - Present',
+      title: 'Cloud Architect',
+      company: 'Softtek',
+      period: 'Mar 2022 – Present',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Lead architect designing AWS-native, multi-account infrastructures using Terraform and GitHub Actions.',
       achievements: [
-        'Designed and implemented cloud-native architectures for enterprise clients, resulting in 40% reduction in operational costs',
-        'Led a team of 5 DevOps engineers in implementing CI/CD pipelines and infrastructure automation',
-        'Migrated legacy applications to containerized microservices architecture',
+        'Designed and delivered AWS-native, multi-account architectures with Terraform and GitHub Actions',
+        'Championed serverless & micro-services patterns, slashing deployment times by 60%',
+        'Mentored 10+ engineers in cloud-native design, security, and IaC best practices',
       ],
-      technologies: ['AWS', 'Kubernetes', 'Terraform', 'Docker', 'CI/CD'],
+      technologies: ['AWS', 'Terraform', 'GitHub Actions', 'Serverless', 'Microservices'],
     },
     {
-      title: 'DevOps Engineer',
-      company: 'Innovate Systems',
-      period: '2018 - 2020',
+      title: 'Cloud & Software Engineer',
+      company: 'Insanity Dev',
+      period: 'Jan 2019 – Present',
       description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        'Engineer focused on Kubernetes-based micro-services and automated deployments for fintech applications.',
       achievements: [
-        'Implemented infrastructure as code using Terraform and AWS CloudFormation',
-        'Reduced deployment time by 70% through automation and CI/CD implementation',
-        'Improved system reliability with comprehensive monitoring and alerting solutions',
+        'Built Kubernetes-based micro-services in Node.js & TypeScript for high-traffic fintech apps',
+        'Automated blue/green deployments and stress-testing pipelines, ensuring 99.99% uptime',
+        'Led AWS cost-optimization initiative, cutting monthly spend by 30%',
       ],
-      technologies: ['AWS', 'Terraform', 'Jenkins', 'Python', 'ELK Stack'],
+      technologies: ['Kubernetes', 'Node.js', 'TypeScript', 'AWS', 'Automation'],
     },
     {
-      title: 'Backend Developer',
-      company: 'Digital Solutions Inc.',
-      period: '2016 - 2018',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+      title: 'Software Engineer',
+      company: 'Bit2Me',
+      period: 'Apr 2020 – Mar 2022',
+      description: 'Developed crypto-exchange services and migrated workloads to GKE to boost deployment frequency.',
       achievements: [
-        'Developed RESTful APIs using Node.js and Express',
-        'Implemented serverless architectures for high-traffic applications',
-        'Optimized database performance and implemented caching strategies',
+        'Created crypto-exchange services with NestJS, PostgreSQL & MongoDB',
+        'Migrated legacy workloads to GKE, improving release frequency from weekly to daily',
       ],
-      technologies: ['Node.js', 'Express', 'MongoDB', 'AWS Lambda', 'Redis'],
+      technologies: ['NestJS', 'PostgreSQL', 'MongoDB', 'GKE', 'Kubernetes'],
     },
   ];
 
