@@ -43,10 +43,11 @@ resource "aws_s3_bucket_policy" "portfolio" {
   })
 }
 
-resource "aws_cloudfront_cache_policy" "portfolio_1d" {
-  name        = "portfolio-1d-cache"
-  default_ttl = 86400
-  max_ttl     = 86400
+resource "aws_cloudfront_cache_policy" "portfolio_cache" {
+  name        = "portfolio-cache"
+  # Cache assets for one year at the edge to minimise TTFB on repeat visits
+  default_ttl = 31536000
+  max_ttl     = 31536000
   min_ttl     = 0
   parameters_in_cache_key_and_forwarded_to_origin {
     cookies_config {
@@ -83,10 +84,12 @@ resource "aws_cloudfront_distribution" "portfolio" {
     cached_methods         = ["GET", "HEAD"]
     target_origin_id       = "portfolio-s3"
     viewer_protocol_policy = "redirect-to-https"
-    cache_policy_id        = aws_cloudfront_cache_policy.portfolio_1d.id
+    cache_policy_id        = aws_cloudfront_cache_policy.portfolio_cache.id
   }
 
-  price_class = "PriceClass_100"
+  # Use all CloudFront edge locations to improve initial server response time
+  # This increases CDN coverage globally, which helps reduce TTFB
+  price_class = "PriceClass_All"
   restrictions {
     geo_restriction {
       restriction_type = "none"
