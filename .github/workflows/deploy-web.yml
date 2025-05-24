@@ -4,6 +4,15 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'package.json'
+      - 'app/**'
+      - 'components/**'
+      - 'hooks/**'
+      - 'images/**'
+      - 'lib/**'
+      - 'public/**'
+      - 'styles/**'
   workflow_dispatch:
 
 permissions:
