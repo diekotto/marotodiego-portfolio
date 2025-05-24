@@ -8,40 +8,49 @@ import Image from 'next/image';
 export default function Projects() {
   const projects = [
     {
-      title: 'Cloud Cost Optimization Platform',
+      title: 'Redlock K8s Laboratory',
       description:
-        'Developed a platform that analyzes cloud resource usage and provides recommendations for cost optimization, resulting in 30% cost reduction for clients.',
+        'Blueprint that demonstrates Redlock-based distributed locking and cron scheduling across micro-services, with Docker-Compose & K8s manifests for local or cluster testing. Archived Jan 2025 but remains a solid reference for fault-tolerant job orchestration.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['AWS', 'Terraform', 'React', 'Node.js', 'PostgreSQL'],
-      githubUrl: '#',
-      liveUrl: '#',
+      tags: ['Node.js', 'Redis', 'Kubernetes'],
+      githubUrl: 'https://github.com/diekotto/redlock-k8s-laboratory',
+      liveUrl: 'https://github.com/diekotto/redlock-k8s-laboratory',
     },
     {
-      title: 'Serverless Microservices Architecture',
+      title: 'Repository Dispatch Action',
       description:
-        'Designed and implemented a serverless architecture for a fintech application, improving scalability and reducing operational costs by 40%.',
+        'Triggers repository_dispatch events so one workflow can fan-out to other repos, passing custom JSON payloads. Single-step usage (uses: diekotto/repository-dispatch@v1) and clear error handling/PAT support.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['AWS Lambda', 'API Gateway', 'DynamoDB', 'Serverless Framework', 'TypeScript'],
-      githubUrl: '#',
-      liveUrl: '#',
+      tags: ['GitHub Action', 'Node.js'],
+      githubUrl: 'https://github.com/diekotto/repository-dispatch',
+      liveUrl: 'https://github.com/diekotto/repository-dispatch',
     },
     {
-      title: 'Multi-Cloud Kubernetes Platform',
+      title: 'Code Digest Action',
       description:
-        'Built a Kubernetes platform that spans multiple cloud providers, ensuring high availability and disaster recovery capabilities.',
+        'Generates an LLM-ready digest of any repo: metadata, directory map and per-file summary—ideal for onboarding or AI agents. Works via GH Action or npx @diekotto/code-digest; artifact retention and glob ignores built-in.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['Kubernetes', 'Terraform', 'Helm', 'GitOps', 'Prometheus'],
-      githubUrl: '#',
-      liveUrl: '#',
+      tags: ['GitHub Action', 'CLI', 'Node.js'],
+      githubUrl: 'https://github.com/diekotto/code-digest-action',
+      liveUrl: 'https://github.com/diekotto/code-digest-action',
     },
     {
-      title: 'Automated CI/CD Pipeline',
+      title: 'AI Pull Review',
       description:
-        'Implemented a fully automated CI/CD pipeline for a large e-commerce platform, reducing deployment time from days to minutes.',
+        'Turns every PR into a conversation with Claude—flags bugs, reviews architecture, checks docs and estimates cost, then posts rich comments. **Invited by Ready Tensor to showcase this project in the Agentic AI Innovation Challenge 2025.** Multiple scan depths, already adopted by several orgs.',
       image: '/placeholder.svg?height=400&width=600',
-      tags: ['GitHub Actions', 'Docker', 'AWS', 'Node.js', 'Jest'],
-      githubUrl: '#',
-      liveUrl: '#',
+      tags: ['GitHub Action', 'CLI', 'Node.js', 'Anthropic'],
+      githubUrl: 'https://github.com/diekotto/ai-pull-review',
+      liveUrl: 'https://github.com/diekotto/ai-pull-review',
+    },
+    {
+      title: 'Sonar Scanner Analysis',
+      description:
+        'Spins up SonarQube + Scanner inside CI, runs analysis and uploads a Markdown report artifact—no external server needed. Perfect for private or air-gapped repos; v1 delivers full quality-gate metrics and issue breakdowns.',
+      image: '/placeholder.svg?height=400&width=600',
+      tags: ['GitHub Action', 'Docker-in-Docker', 'SonarQube'],
+      githubUrl: 'https://github.com/diekotto/sonar-scanner-analysis',
+      liveUrl: 'https://github.com/diekotto/sonar-scanner-analysis',
     },
   ];
 
