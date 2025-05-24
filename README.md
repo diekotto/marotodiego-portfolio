@@ -13,6 +13,7 @@ I build resilient, highly-scalable cloud platforms that turn business problems i
 - Section-based layout:
   - Professional introduction
   - Technical skills showcase
+  - Certifications
   - Work experience timeline
   - Personal projects gallery
   - Technical articles section
@@ -92,6 +93,7 @@ src/
 - **Navbar**: Fixed navigation with smooth scroll to sections
 - **Hero**: Introduction section with social links
 - **Skills**: Technical skills displayed in card format
+- **Certifications**: Professional certifications highlighting expertise
 - **Experience**: Professional experience with detailed descriptions
 - **Projects**: Personal projects showcase with GitHub links
 - **Articles**: Technical articles with links to full content
