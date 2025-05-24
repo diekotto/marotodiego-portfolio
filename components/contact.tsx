@@ -61,8 +61,8 @@ export default function Contact() {
             </CardHeader>
             <CardContent>
               <CardDescription>
-                <a href="mailto:diego@example.com" className="hover:text-blue-600 transition-colors">
-                  diego@example.com
+                <a href="mailto:hola@marotodiego.com" className="hover:text-blue-600 transition-colors">
+                  hola@marotodiego.com
                 </a>
               </CardDescription>
             </CardContent>
