@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLinkIcon, GithubIcon } from 'lucide-react';
+import { GithubIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -59,12 +59,6 @@ export default function Community() {
                   <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <GithubIcon className="h-4 w-4 mr-2" />
                     Code
-                  </Link>
-                </Button>
-                <Button size="sm" asChild>
-                  <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                    <ExternalLinkIcon className="h-4 w-4 mr-2" />
-                    Live Demo
                   </Link>
                 </Button>
               </CardFooter>
