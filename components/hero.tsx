@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { ArrowDownIcon, GithubIcon, LinkedinIcon } from 'lucide-react';
+import { ArrowDownIcon, GithubIcon, LinkedinIcon, MailIcon, RssIcon } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -28,15 +28,27 @@ export default function Hero() {
 
         <div className="flex gap-6 mb-16">
           <Button variant="ghost" size="icon" className="rounded-full" asChild>
-            <Link href="https://github.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://github.com/diekotto" target="_blank" rel="noopener noreferrer">
               <GithubIcon className="h-6 w-6" />
               <span className="sr-only">GitHub</span>
             </Link>
           </Button>
           <Button variant="ghost" size="icon" className="rounded-full" asChild>
-            <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/diegomaroto" target="_blank" rel="noopener noreferrer">
               <LinkedinIcon className="h-6 w-6" />
               <span className="sr-only">LinkedIn</span>
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" className="rounded-full" asChild>
+            <Link href="https://dev.to/diek" target="_blank" rel="noopener noreferrer">
+              <RssIcon className="h-6 w-6" />
+              <span className="sr-only">Blog</span>
+            </Link>
+          </Button>
+          <Button variant="ghost" size="icon" className="rounded-full" asChild>
+            <Link href="mailto:hola@marotodiego.com">
+              <MailIcon className="h-6 w-6" />
+              <span className="sr-only">Email</span>
             </Link>
           </Button>
         </div>

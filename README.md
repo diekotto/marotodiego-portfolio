@@ -132,13 +132,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📞 Contact
+## Find Me Online
 
 For any questions or suggestions, please reach out:
 
-- LinkedIn: [Your LinkedIn]
-- GitHub: [Your GitHub]
-- Email: [Your Email]
+- GitHub: [diekotto](https://github.com/diekotto)
+- LinkedIn: [diegomaroto](https://www.linkedin.com/in/diegomaroto)
+- Blog: [dev.to/diek](https://dev.to/diek)
+- Email: hola@marotodiego.com
 
 ---
 
