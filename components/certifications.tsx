@@ -1,11 +1,12 @@
 import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 
 export default function Certifications() {
   const certifications = [
-    'AWS Certified Solutions Architect - Associate',
-    'HashiCorp Certified: Terraform Associate',
-    'Docker Compose & Swarm',
-    'Pentesting en Seguridad Informática (Detecta, Defiende 2023)',
+    { name: 'AWS Certified Solutions Architect - Associate', issuer: 'AWS' },
+    { name: 'HashiCorp Certified: Terraform Associate', issuer: 'Udemy' },
+    { name: 'Docker Compose & Swarm', issuer: 'Udemy' },
+    { name: 'Pentesting en Seguridad Informática (Detecta, Defiende 2023)', issuer: 'Udemy' },
   ];
 
   return (
@@ -20,7 +21,10 @@ export default function Certifications() {
           {certifications.map((cert, index) => (
             <Card key={index}>
               <CardHeader>
-                <CardTitle className="text-lg text-center">{cert}</CardTitle>
+                <CardTitle className="text-lg text-center">{cert.name}</CardTitle>
+                <Badge variant={cert.issuer === 'AWS' ? 'default' : 'secondary'} className="mt-2">
+                  {cert.issuer === 'AWS' ? 'Official' : 'Udemy'}
+                </Badge>
               </CardHeader>
             </Card>
           ))}
