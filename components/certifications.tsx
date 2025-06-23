@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 export default function Certifications() {
@@ -21,10 +21,13 @@ export default function Certifications() {
           {certifications.map((cert, index) => (
             <Card key={index}>
               <CardHeader>
-                <CardTitle className="text-lg text-center">{cert.name}</CardTitle>
-                <Badge variant={cert.issuer === 'AWS' ? 'default' : 'secondary'} className="mt-2">
-                  {cert.issuer === 'AWS' ? 'Official' : 'Udemy'}
-                </Badge>
+                <CardTitle className="text-lg text-center">
+                  {cert.name}
+                  <br></br>
+                  <Badge variant={cert.issuer !== 'Udemy' ? 'default' : 'secondary'} className="mt-2">
+                    {cert.issuer}
+                  </Badge>
+                </CardTitle>
               </CardHeader>
             </Card>
           ))}
