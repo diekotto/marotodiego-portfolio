@@ -3,6 +3,10 @@ import { Card, CardContent } from '@/components/ui/card';
 export default function Awards() {
   const awards = [
     {
+      emoji: '🧠',
+      text: 'Invited by Ready Tensor to showcase AI Pull Review in the Agentic AI Innovation Challenge 2025',
+    },
+    {
       emoji: '🥈',
       text: 'Silver League - Hypersonic Hackathon 2016',
     },
