@@ -1,159 +1,72 @@
-# Personal Portfolio - Cloud & DevOps Architect · AWS Solutions Architect · Security-First Engineer
+# marotodiego.com
 
-A modern, responsive portfolio website built with React, Shadcn, and Tailwind CSS. This portfolio showcases professional experience, technical skills, projects, and technical articles.
+My personal portfolio — a **Cloud & DevOps architect's résumé presented as a terminal session**. Every section is the output of a command (`$ cat about.md`, `$ ls projects/`, `$ cat experience.log`), rendered in a single phosphor-green-on-slate terminal skin with JetBrains Mono throughout.
 
-I build resilient, highly-scalable cloud platforms that turn business problems into automated, serverless, and container-driven solutions. With deep expertise in AWS, Terraform, and CI/CD automation, I enable teams to ship faster and sleep better. Passionate about clean architectures, mentoring, and driving a security-first culture.
+Live at **[www.marotodiego.com](https://www.marotodiego.com)**.
 
-## 🚀 Features
+The design language (colors, typography, the shell-prompt metaphor) is documented in [`DESIGN.md`](DESIGN.md).
 
-- Responsive design optimized for all devices
-- Dark theme with modern UI
-- Smooth scroll navigation
-- Interactive components with hover effects
-- Section-based layout:
-  - Professional introduction
-  - Technical skills showcase
-  - Certifications
-  - Work experience timeline
-  - Personal projects gallery
-  - Community contributions section
-  - Technical articles section
+## Tech stack
 
-## 🛠️ Tech Stack
+- **Framework:** Next.js 15 (App Router) with React 19, exported as a fully static site (`output: 'export'`)
+- **UI:** shadcn/ui on Radix primitives, `lucide-react` icons
+- **Styling:** Tailwind CSS, dark theme by default (light "paper terminal" toggle via `next-themes`)
+- **Font:** JetBrains Mono (`next/font/google`)
+- **Hosting:** S3 (private origin) behind CloudFront, on AWS — provisioned with Terraform
+- **CI/CD:** GitHub Actions
 
-- **Framework:** React with Shadcn
-- **Build Tool:** Vite
-- **Styling:** Tailwind CSS
-- **Icons:** Lucide React
-- **Deployment:** Aws Cloudfront with S3
-
-## 📦 Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/diekotto/portfolio.git
-cd portfolio
-```
-
-2. Install dependencies:
+## Getting started
 
 ```bash
 npm install
+npm run dev      # http://localhost:3000
 ```
 
-3. Start the development server:
+Other scripts:
 
 ```bash
-npm run dev
+npm run build    # static export to ./out
+npm run lint     # next lint
+npm run fmt      # prettier --write .
 ```
 
-4. Build for production:
+> Run `lint`, `build`, and `fmt` before opening a PR.
 
-```bash
-npm run build
-```
-
-## 🔧 Project Structure
+## Project structure
 
 ```
-src/
-  ├── components/
-  │   ├── sections/
-  │   │   ├── Hero.tsx
-  │   │   ├── Skills.tsx
-  │   │   ├── Experience.tsx
-  │   │   ├── Projects.tsx
-  │   │   └── Articles.tsx
-  │   └── layout/
-  │       └── Navbar.tsx
-  ├── App.tsx
-  └── index.tsx
+app/                 # Next.js App Router: layout.tsx, page.tsx, globals.css
+components/           # Section components (hero, about, skills, …) + section-heading
+  └── ui/             # shadcn/ui primitives
+hooks/                # Custom React hooks
+lib/                  # Shared utilities
+public/               # Static assets (icons, etc.)
+terraform/            # AWS infrastructure (S3, CloudFront, ACM, Route53, apex redirect)
+.github/workflows/    # deploy-web.yml (site), terraform.yml (infra)
 ```
 
-## 🎨 Customization
+`app/page.tsx` composes the page in order: Hero → About → Skills → Certifications → Projects → Community → Experience → Education → Awards → Contact → Footer.
 
-1. Update personal information:
+## Deployment
 
-   - Edit content in each section component
-   - Update links and social media profiles
-   - Modify job experiences and projects
+The site is a static export served from a private S3 bucket through CloudFront (OAC, ACM TLS, HTTP/2+3, gzip/brotli). The apex domain 301-redirects to `www` via an API Gateway MOCK integration. All of this lives in [`terraform/`](terraform/).
 
-2. Styling:
+Deploys are triggered manually via the **Deploy to S3** GitHub Action (`workflow_dispatch`), which builds, syncs `out/` to S3 (HTML uploaded `no-cache`, hashed assets `immutable`), and lets CloudFront serve the result.
 
-   - Colors can be adjusted in `tailwind.config.js`
-   - Component styles are managed with Tailwind classes
-   - Layout and spacing can be modified in individual components
+## Community contributions
 
-3. Content Structure:
-   - Each section is a separate component
-   - Easy to add or remove sections as needed
+| Project        | What it does                                                                                                                                   | My contribution                                                                                                                                | Link                                  |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
+| **Readme AI**  | AI-powered CLI that autogenerates rich, customizable README files from any repo; supports OpenAI, Anthropic, Gemini, Ollama, and offline mode. | Shipped a GitHub-Action wrapper, added Spanish locale, and refactored the CLI to support larger Claude context windows while tightening tests. | <https://github.com/eli64s/readme-ai> |
+| **Size Limit** | Performance-budget tool for JavaScript that runs in CI, calculates real download & exec cost, and fails the build if a PR tips the budget.     | Fixed PNPM-workspace resolution, added a Vite example, and triaged bundle-size regressions across three major frameworks.                      | <https://github.com/ai/size-limit>    |
 
-## 🔍 Component Overview
-
-- **Navbar**: Fixed navigation with smooth scroll to sections
-- **Hero**: Introduction section with social links
-- **Skills**: Technical skills displayed in card format
-- **Certifications**: Professional certifications highlighting expertise
-- **Experience**: Professional experience with detailed descriptions
-- **Projects**: Personal projects showcase with GitHub links
-- **Community Contributions**: Highlights open source projects I've helped shape
-- **Articles**: Technical articles with links to full content
-
-## 📱 Responsive Design
-
-The portfolio is fully responsive with breakpoints for:
-
-- Mobile devices
-- Tablets
-- Desktop screens
-- Large desktop screens
-
-## 🔄 Development Workflow
-
-1. Create a new branch for features:
-
-```bash
-git checkout -b feature/your-feature-name
-```
-
-2. Make your changes and commit:
-
-```bash
-git add .
-git commit -m "Description of changes"
-```
-
-3. Push changes and create a pull request:
-
-```bash
-git push origin feature/your-feature-name
-```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## Community Contributions
-
-| Project        | What It Does                                                                                                                                                                             | My Touch                                                                                                                                       | Link                                  |
-| -------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |
-| **Readme AI**  | AI-powered CLI that autogenerates rich, customizable README files from any repo; supports OpenAI, Anthropic, Gemini, Ollama, and even offline mode.                                      | Shipped a GitHub-Action wrapper, added Spanish locale, and refactored the CLI to support larger Claude context windows while tightening tests. | <https://github.com/eli64s/readme-ai> |
-| **Size Limit** | Performance-budget tool for JavaScript that runs in CI, calculates real download & exec cost, and fails the build if a PR tips the budget; includes tree-shaking and time-based metrics. | Fixed PNPM-workspace resolution, added Vite example, and triaged bundle-size regressions across three major frameworks.                        | <https://github.com/ai/size-limit>    |
-
-## Find Me Online
-
-For any questions or suggestions, please reach out:
+## Find me online
 
 - GitHub: [diekotto](https://github.com/diekotto)
 - LinkedIn: [diegomaroto](https://www.linkedin.com/in/diegomaroto)
 - Blog: [dev.to/diek](https://dev.to/diek)
 - Email: hola@marotodiego.com
 
----
+## License
 
-Made with ❤️
+[MIT](LICENSE)
