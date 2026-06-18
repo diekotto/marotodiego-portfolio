@@ -1,5 +1,6 @@
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import SectionHeading from '@/components/section-heading';
 
 export default function Skills() {
   const skillCategories = [
@@ -57,21 +58,18 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="skills" className="py-16 border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Core Stack &amp; Superpowers</h2>
-          <div className="h-1 w-20 bg-blue-600 mx-auto"></div>
-          <p className="mt-6 text-lg max-w-3xl mx-auto text-slate-700 dark:text-slate-300">
-            My go-to tools and areas of expertise for building resilient, automated cloud platforms.
-          </p>
-        </div>
+        <SectionHeading command="ls -la ~/stack" className="mb-4" />
+        <p className="mb-12 max-w-3xl text-muted-foreground">
+          # My go-to tools and areas of expertise for building resilient, automated cloud platforms.
+        </p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
             <Card key={index}>
               <CardHeader>
-                <CardTitle>{category.title}</CardTitle>
+                <CardTitle className="text-base text-primary before:content-['#_']">{category.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">

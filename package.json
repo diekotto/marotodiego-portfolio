@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "fmt": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "release": "./scripts/release.sh"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",

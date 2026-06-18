@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { GithubIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import SectionHeading from '@/components/section-heading';
 
 export default function Community() {
   const contributions = [
@@ -28,21 +29,18 @@ export default function Community() {
   ];
 
   return (
-    <section id="community" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="community" className="py-16 border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Community Contributions</h2>
-          <div className="h-1 w-20 bg-blue-600 mx-auto"></div>
-        </div>
+        <SectionHeading command="git log --author=diek ~/contributions" />
 
         <div className="grid md:grid-cols-2 gap-8">
           {contributions.map((project, index) => (
             <Card key={index} className="overflow-hidden flex flex-col h-full">
-              <div className="relative w-full aspect-[3/2]">
+              <div className="relative w-full aspect-[3/2] border-b border-border">
                 <Image src={project.image} alt={project.title} fill className="object-contain" />
               </div>
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="text-primary before:content-['>_']">{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">

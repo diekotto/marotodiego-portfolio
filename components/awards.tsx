@@ -1,4 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
+import SectionHeading from '@/components/section-heading';
 
 export default function Awards() {
   const awards = [
@@ -21,19 +22,21 @@ export default function Awards() {
   ];
 
   return (
-    <section id="awards" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="awards" className="py-16 border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Awards &amp; Highlights</h2>
-          <div className="h-1 w-20 bg-blue-600 mx-auto"></div>
-        </div>
+        <SectionHeading command="cat awards.txt" />
 
         <div className="grid md:grid-cols-3 gap-6">
           {awards.map((award, index) => (
-            <Card key={index}>
+            <Card key={index} className="relative">
+              {index === 0 && (
+                <span className="absolute right-3 top-3 border border-primary/40 bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">
+                  [featured]
+                </span>
+              )}
               <CardContent className="p-6 flex items-start">
                 <span className="text-3xl mr-4">{award.emoji}</span>
-                <p className="text-lg text-slate-700 dark:text-slate-300">{award.text}</p>
+                <p className="text-lg text-muted-foreground">{award.text}</p>
               </CardContent>
             </Card>
           ))}

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import SectionHeading from '@/components/section-heading';
 
 export default function Education() {
   const education = [
@@ -18,18 +19,15 @@ export default function Education() {
   ];
 
   return (
-    <section id="education" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="education" className="py-16 border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Education</h2>
-          <div className="h-1 w-20 bg-blue-600 mx-auto"></div>
-        </div>
+        <SectionHeading command="cat education.txt" />
 
         <div className="space-y-8 max-w-xl mx-auto">
           {education.map((item, index) => (
             <Card key={index}>
               <CardHeader>
-                <CardTitle className="text-xl">{item.degree}</CardTitle>
+                <CardTitle className="text-lg text-primary before:content-['>_']">{item.degree}</CardTitle>
               </CardHeader>
               <CardContent>
                 <Badge variant="outline">{item.institution}</Badge>

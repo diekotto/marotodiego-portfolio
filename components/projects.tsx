@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { GithubIcon } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
+import SectionHeading from '@/components/section-heading';
 
 export default function Projects() {
   const projects = [
@@ -55,24 +56,21 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-slate-950">
+    <section id="projects" className="py-16 border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Projects</h2>
-          <div className="h-1 w-20 bg-blue-600 mx-auto"></div>
-          <p className="mt-6 text-lg max-w-3xl mx-auto text-slate-700 dark:text-slate-300">
-            A selection of projects that showcase my expertise in cloud architecture and DevOps engineering.
-          </p>
-        </div>
+        <SectionHeading command="ls projects/" className="mb-4" />
+        <p className="mb-12 max-w-3xl text-muted-foreground">
+          # A selection of projects that showcase my expertise in cloud architecture and DevOps engineering.
+        </p>
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <Card key={index} className="overflow-hidden flex flex-col h-full">
-              <div className="relative h-48 w-full">
+              <div className="relative h-48 w-full border-b border-border">
                 <Image src={project.image || '/placeholder.svg'} alt={project.title} fill className="object-cover" />
               </div>
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="text-primary before:content-['>_']">{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">

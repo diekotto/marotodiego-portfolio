@@ -1,18 +1,6 @@
 name: Deploy to S3
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'package.json'
-      - 'app/**'
-      - 'components/**'
-      - 'hooks/**'
-      - 'images/**'
-      - 'lib/**'
-      - 'public/**'
-      - 'styles/**'
   workflow_dispatch:
 
 concurrency:

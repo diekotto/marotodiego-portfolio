@@ -1,11 +1,6 @@
 name: 'Terraform CI'
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'terraform/**'
   workflow_dispatch:
 
 concurrency:

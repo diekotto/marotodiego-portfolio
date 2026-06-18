@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import SectionHeading from '@/components/section-heading';
 
 export default function Experience() {
   const experiences = [
@@ -43,32 +44,29 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="experience" className="py-16 border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Work Experience</h2>
-          <div className="h-1 w-20 bg-blue-600 mx-auto"></div>
-          <p className="mt-6 text-lg max-w-3xl mx-auto text-slate-700 dark:text-slate-300">
-            My professional journey in cloud architecture and DevOps engineering.
-          </p>
-        </div>
+        <SectionHeading command="cat experience.log" className="mb-4" />
+        <p className="mb-12 max-w-3xl text-muted-foreground">
+          # My professional journey in cloud architecture and DevOps engineering.
+        </p>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <Card key={index}>
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
-                  <CardTitle>{exp.title}</CardTitle>
+                  <CardTitle className="text-primary before:content-['>_']">{exp.title}</CardTitle>
                   <Badge variant="outline" className="md:self-start">
                     {exp.period}
                   </Badge>
                 </div>
-                <p className="text-lg font-medium text-blue-600 dark:text-blue-400">{exp.company}</p>
+                <p className="text-muted-foreground">@ {exp.company}</p>
               </CardHeader>
               <CardContent>
-                <p className="mb-4 text-slate-700 dark:text-slate-300">{exp.description}</p>
+                <p className="mb-4 text-muted-foreground">{exp.description}</p>
                 <h4 className="font-semibold mb-2">Key Achievements:</h4>
-                <ul className="list-disc pl-5 mb-4 space-y-1 text-slate-700 dark:text-slate-300">
+                <ul className="list-disc pl-5 mb-4 space-y-1 text-muted-foreground">
                   {exp.achievements.map((achievement, i) => (
                     <li key={i}>{achievement}</li>
                   ))}

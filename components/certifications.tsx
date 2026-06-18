@@ -1,5 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import SectionHeading from '@/components/section-heading';
 
 export default function Certifications() {
   const certifications = [
@@ -10,12 +11,9 @@ export default function Certifications() {
   ];
 
   return (
-    <section id="certifications" className="py-20 bg-slate-50 dark:bg-slate-900">
+    <section id="certifications" className="py-16 border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Certifications</h2>
-          <div className="h-1 w-20 bg-blue-600 mx-auto"></div>
-        </div>
+        <SectionHeading command="cat certifications.txt" />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {certifications.map((cert, index) => (

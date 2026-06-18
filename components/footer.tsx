@@ -5,12 +5,16 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 text-white py-12">
+    <footer className="bg-background py-12 border-t border-border">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <h3 className="text-xl font-bold">Diego Maroto</h3>
-            <p className="text-slate-400 mt-2">
+            <h3 className="font-bold">
+              <span className="text-primary">diek@portfolio</span>
+              <span className="text-muted-foreground">:~$ </span>
+              <span>whoami</span>
+            </h3>
+            <p className="text-muted-foreground mt-2">
               Cloud & DevOps Architect · AWS Solutions Architect · Security-First Engineer
             </p>
           </div>
@@ -20,7 +24,7 @@ export default function Footer() {
               href="https://github.com/diekotto"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
             >
               <GithubIcon className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
@@ -29,7 +33,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/diegomaroto"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
             >
               <LinkedinIcon className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
@@ -38,20 +42,26 @@ export default function Footer() {
               href="https://dev.to/diek"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-blue-400 transition-colors"
+              className="text-muted-foreground hover:text-primary transition-colors"
             >
               <RssIcon className="h-5 w-5" />
               <span className="sr-only">Blog</span>
             </Link>
-            <Link href="mailto:hola@marotodiego.com" className="hover:text-blue-400 transition-colors">
+            <Link
+              href="mailto:hola@marotodiego.com"
+              className="text-muted-foreground hover:text-primary transition-colors"
+            >
               <MailIcon className="h-5 w-5" />
               <span className="sr-only">Email</span>
             </Link>
           </div>
         </div>
 
-        <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-slate-400 text-sm">&copy; {currentYear} Diego Maroto. All rights reserved.</p>
+        <div className="border-t border-border mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-muted-foreground text-sm">
+            <span className="text-primary"># </span>
+            {currentYear} Diego Maroto. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
