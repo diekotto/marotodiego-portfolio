@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MailIcon, PhoneIcon, MapPinIcon } from 'lucide-react';
+import { MailIcon, LinkedinIcon, MapPinIcon } from 'lucide-react';
 import SectionHeading from '@/components/section-heading';
 
 export default function Contact() {
@@ -31,14 +31,19 @@ export default function Contact() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center">
-                <PhoneIcon className="h-5 w-5 mr-2 text-primary" />
-                Phone
+                <LinkedinIcon className="h-5 w-5 mr-2 text-primary" />
+                LinkedIn
               </CardTitle>
             </CardHeader>
             <CardContent>
               <CardDescription>
-                <a href="tel:+1234567890" className="hover:text-primary transition-colors">
-                  +34 --
+                <a
+                  href="https://www.linkedin.com/in/diegomaroto"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary transition-colors"
+                >
+                  in/diegomaroto
                 </a>
               </CardDescription>
             </CardContent>

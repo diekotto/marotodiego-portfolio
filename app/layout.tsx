@@ -6,13 +6,37 @@ import Navbar from '@/components/navbar';
 
 const jetbrainsMono = JetBrains_Mono({ subsets: ['latin'] });
 
-export const metadata = {
-  title: 'Diego Maroto | Cloud & DevOps Architect',
-  description:
-    'I craft resilient cloud platforms that automate workflows and scale securely. Specializing in AWS, Terraform and CI/CD with a security-first mindset.',
-  generator: 'v0.dev, OpenAI Codex, Github Copilot Agent, and more',
+import type { Metadata } from 'next';
+
+const title = 'Diego Maroto | Cloud & DevOps Architect';
+const description =
+  'I craft resilient cloud platforms that automate workflows and scale securely. Specializing in AWS, Terraform and CI/CD with a security-first mindset.';
+const url = 'https://marotodiego.com';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(url),
+  title,
+  description,
+  keywords: ['Cloud Architect', 'DevOps', 'AWS', 'Terraform', 'CI/CD', 'Kubernetes', 'Serverless', 'Diego Maroto'],
+  authors: [{ name: 'Diego Maroto', url }],
+  alternates: {
+    canonical: '/',
+  },
   icons: {
     icon: '/cloud-icon.svg',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: '/',
+    siteName: 'marotodiego.com',
+    title,
+    description,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
   },
 };
 

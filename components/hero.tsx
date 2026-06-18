@@ -40,7 +40,7 @@ export default function Hero() {
                 <Prompt />
                 whoami
               </p>
-              <p className="text-2xl md:text-4xl font-bold mt-1">Diego Maroto</p>
+              <h1 className="text-2xl md:text-4xl font-bold mt-1">Diego Maroto</h1>
             </div>
 
             <div>
