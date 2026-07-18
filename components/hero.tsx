@@ -16,8 +16,8 @@ function Prompt() {
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center border-b border-border">
-      <div className="container mx-auto px-4 py-16">
+    <section className="relative border-b border-border">
+      <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-3xl">
           <div className="flex items-center gap-4 mb-8">
             <Image

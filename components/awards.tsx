@@ -4,19 +4,15 @@ import SectionHeading from '@/components/section-heading';
 export default function Awards() {
   const awards = [
     {
-      emoji: '🧠',
       text: 'Invited by Ready Tensor to showcase AI Pull Review in the Agentic AI Innovation Challenge 2025',
     },
     {
-      emoji: '🥈',
       text: 'Silver League - Hypersonic Hackathon 2016',
     },
     {
-      emoji: '🏆',
       text: 'Best Tech Business Project - Yuzz Alicante 2015',
     },
     {
-      emoji: '🏅',
       text: 'Best Applied Science & Technology Project - Mooqia 2015',
     },
   ];
@@ -26,7 +22,7 @@ export default function Awards() {
       <div className="container mx-auto px-4">
         <SectionHeading command="cat awards.txt" />
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {awards.map((award, index) => (
             <Card key={index} className="relative">
               {index === 0 && (
@@ -34,9 +30,9 @@ export default function Awards() {
                   [featured]
                 </span>
               )}
-              <CardContent className="p-6 flex items-start">
-                <span className="text-3xl mr-4">{award.emoji}</span>
-                <p className="text-lg text-muted-foreground">{award.text}</p>
+              <CardContent className={`p-6 flex items-start ${index === 0 ? 'pr-28' : ''}`}>
+                <span className="text-primary font-bold mr-4">*</span>
+                <p>{award.text}</p>
               </CardContent>
             </Card>
           ))}

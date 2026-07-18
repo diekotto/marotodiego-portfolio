@@ -9,6 +9,16 @@ import SectionHeading from '@/components/section-heading';
 export default function Projects() {
   const projects = [
     {
+      title: 'AI Pull Review',
+      description:
+        'Turns every PR into a conversation with Claude—flags bugs, reviews architecture, checks docs and estimates cost, then posts rich comments. Invited by Ready Tensor to showcase this project in the Agentic AI Innovation Challenge 2025. Multiple scan depths, already adopted by several orgs.',
+      image: '/images/projects/ai-pull-review-logo.jpg',
+      tags: ['GitHub Action', 'CLI', 'Node.js', 'Anthropic', 'AI', 'Automation'],
+      githubUrl: 'https://github.com/diekotto/ai-pull-review',
+      liveUrl: 'https://github.com/diekotto/ai-pull-review',
+      featured: true,
+    },
+    {
       title: 'Redlock K8s Laboratory',
       description:
         'Blueprint that demonstrates Redlock-based distributed locking and cron scheduling across micro-services, with Docker-Compose & K8s manifests for local or cluster testing. Archived Jan 2025 but remains a solid reference for fault-tolerant job orchestration.',
@@ -36,15 +46,6 @@ export default function Projects() {
       liveUrl: 'https://github.com/diekotto/code-digest-action',
     },
     {
-      title: 'AI Pull Review',
-      description:
-        'Turns every PR into a conversation with Claude—flags bugs, reviews architecture, checks docs and estimates cost, then posts rich comments. **Invited by Ready Tensor to showcase this project in the Agentic AI Innovation Challenge 2025.** Multiple scan depths, already adopted by several orgs.',
-      image: '/images/projects/ai-pull-review-logo.jpg',
-      tags: ['GitHub Action', 'CLI', 'Node.js', 'Anthropic', 'AI', 'Automation'],
-      githubUrl: 'https://github.com/diekotto/ai-pull-review',
-      liveUrl: 'https://github.com/diekotto/ai-pull-review',
-    },
-    {
       title: 'Sonar Scanner Analysis',
       description:
         'Spins up SonarQube + Scanner inside CI, runs analysis and uploads a Markdown report artifact—no external server needed. Perfect for private or air-gapped repos; v1 delivers full quality-gate metrics and issue breakdowns.',
@@ -65,13 +66,19 @@ export default function Projects() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden flex flex-col h-full">
-              <div className="relative h-48 w-full border-b border-border">
-                <Image src={project.image || '/placeholder.svg'} alt={project.title} fill className="object-cover" />
-              </div>
+            <Card key={index} className={`group flex flex-col h-full ${project.featured ? 'md:col-span-2' : ''}`}>
               <CardHeader>
-                <CardTitle className="text-primary before:content-['>_']">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
+                <div className="flex items-center gap-4">
+                  <Image
+                    src={project.image || '/placeholder.svg'}
+                    alt={project.title}
+                    width={64}
+                    height={64}
+                    className="border border-border object-cover grayscale opacity-80 transition-all group-hover:grayscale-0 group-hover:opacity-100"
+                  />
+                  <CardTitle className="text-primary before:content-['>_']">{project.title}</CardTitle>
+                </div>
+                <CardDescription className="text-foreground max-w-3xl pt-2">{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
                 <div className="flex flex-wrap gap-2 mb-4">

@@ -23,7 +23,7 @@ export default function Education() {
       <div className="container mx-auto px-4">
         <SectionHeading command="cat education.txt" />
 
-        <div className="space-y-8 max-w-xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6">
           {education.map((item, index) => (
             <Card key={index}>
               <CardHeader>

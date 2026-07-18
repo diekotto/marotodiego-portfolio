@@ -10,17 +10,15 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-lg mb-6 text-muted-foreground">
+            <p className="mb-6">
               I build resilient, highly-scalable cloud platforms that turn business problems into automated, serverless,
               and container-driven solutions.
             </p>
-            <p className="text-lg mb-6 text-muted-foreground">
+            <p className="mb-6">
               With deep expertise in AWS, Terraform, and CI/CD automation, I enable teams to ship faster and sleep
               better.
             </p>
-            <p className="text-lg text-muted-foreground">
-              Passionate about clean architectures, mentoring, and driving a security-first culture.
-            </p>
+            <p>Passionate about clean architectures, mentoring, and driving a security-first culture.</p>
           </div>
 
           <div className="grid gap-6">
@@ -29,9 +27,7 @@ export default function About() {
                 <ServerIcon className="h-10 w-10 text-primary mr-4 flex-shrink-0" />
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Infrastructure as Code</h3>
-                  <p className="text-muted-foreground">
-                    Expertise in using Terraform, and CDK to automate infrastructure provisioning and management.
-                  </p>
+                  <p>Expertise in using Terraform, and CDK to automate infrastructure provisioning and management.</p>
                 </div>
               </CardContent>
             </Card>
@@ -41,7 +37,7 @@ export default function About() {
                 <CloudIcon className="h-10 w-10 text-primary mr-4 flex-shrink-0" />
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Cloud-Native Solutions</h3>
-                  <p className="text-muted-foreground">
+                  <p>
                     Designing and implementing solutions using containers, Kubernetes, and serverless technologies
                     across major cloud providers.
                   </p>
@@ -54,7 +50,7 @@ export default function About() {
                 <ShieldIcon className="h-10 w-10 text-primary mr-4 flex-shrink-0" />
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primary">Security & Compliance</h3>
-                  <p className="text-muted-foreground">
+                  <p>
                     Implementing security best practices and compliance frameworks in cloud environments to protect
                     sensitive data and systems.
                   </p>

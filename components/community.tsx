@@ -35,13 +35,19 @@ export default function Community() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {contributions.map((project, index) => (
-            <Card key={index} className="overflow-hidden flex flex-col h-full">
-              <div className="relative w-full aspect-[3/2] border-b border-border">
-                <Image src={project.image} alt={project.title} fill className="object-contain" />
-              </div>
+            <Card key={index} className="group flex flex-col h-full">
               <CardHeader>
-                <CardTitle className="text-primary before:content-['>_']">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
+                <div className="flex items-center gap-4">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={64}
+                    height={64}
+                    className="border border-border object-contain p-1 grayscale opacity-80 transition-all group-hover:grayscale-0 group-hover:opacity-100"
+                  />
+                  <CardTitle className="text-primary before:content-['>_']">{project.title}</CardTitle>
+                </div>
+                <CardDescription className="text-foreground pt-2">{project.description}</CardDescription>
               </CardHeader>
               <CardContent className="flex-grow">
                 <div className="flex flex-wrap gap-2 mb-4">

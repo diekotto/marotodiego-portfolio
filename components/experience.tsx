@@ -64,9 +64,9 @@ export default function Experience() {
                 <p className="text-muted-foreground">@ {exp.company}</p>
               </CardHeader>
               <CardContent>
-                <p className="mb-4 text-muted-foreground">{exp.description}</p>
+                <p className="mb-4">{exp.description}</p>
                 <h4 className="font-semibold mb-2">Key Achievements:</h4>
-                <ul className="list-disc pl-5 mb-4 space-y-1 text-muted-foreground">
+                <ul className="list-disc pl-5 mb-4 space-y-1">
                   {exp.achievements.map((achievement, i) => (
                     <li key={i}>{achievement}</li>
                   ))}

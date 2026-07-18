@@ -74,8 +74,8 @@ Sizes are driven with Tailwind's type scale rather than fixed tokens. The workin
 
 ### Grid & Container
 
-- Centered `container` (max-width 1400px at `2xl`, `2rem` padding) — the same container on every section.
-- Content grids: skills `lg:grid-cols-3`, certifications `lg:grid-cols-4`, projects/community `md:grid-cols-2`, about/awards/contact use 2–3 column grids; experience and education stack full-width / centered.
+- Centered `container` (max-width 1152px from `xl` up, `2rem` padding) — the same container on every section, kept narrow so prompt lines and card grids share one measure.
+- Content grids: skills `lg:grid-cols-3`, certifications/awards `md:grid-cols-2`, projects/community `md:grid-cols-2` (the featured project spans `md:col-span-2`), education `md:grid-cols-3`; experience stacks full-width.
 - The hero and text blocks are constrained to `max-w-3xl` / `max-w-2xl` so prompt lines read like terminal output, not full-bleed paragraphs.
 
 ### Whitespace Philosophy
@@ -97,7 +97,7 @@ Interactive controls (nav links, social links, buttons, theme toggle) use icon-b
 
 #### Image Behavior
 
-The only photographic asset is the penguin logo in the hero, rendered at 64 px with a 1 px `{colors.border}` frame (a "framed pane", consistent with cards). Project/community logos sit in a bordered top region of their card with a `border-b border-border` divider, never cropped with radius.
+The only full-color image is the penguin logo in the hero, rendered at 64 px with a 1 px `{colors.border}` frame (a "framed pane", consistent with cards). Project/community logos are 64 px framed thumbnails beside the card title, desaturated to keep the closed palette (`grayscale opacity-80`, revealing color on card hover). Logos are never large banner fills — third-party brand art must not out-shout the terminal.
 
 ## Elevation & Depth
 
@@ -140,7 +140,7 @@ There are **no soft shadows and no blurred elevation** anywhere. Depth is expres
 
 ### Hero (terminal session)
 
-**`hero`** — a simulated login session, left-aligned, `max-w-3xl`.
+**`hero`** — a simulated login session, left-aligned, `max-w-3xl`. It flows from the top of the page (`py-16`/`py-24`) like a real session — never vertically centered in the viewport.
 
 - A `Last login: …` caption beside the framed penguin logo.
 - A sequence of prompt blocks (`whoami` → name, `cat role.txt` → green role, `cat bio.txt` → muted bio, `ls ~/links` → social links).
@@ -151,8 +151,9 @@ There are **no soft shadows and no blurred elevation** anywhere. Depth is expres
 
 **`card`** (`components/ui/card.tsx`) — `rounded-none border border-border bg-card text-card-foreground`. Flat pane, no shadow. The shared surface for skills, certifications, projects, community, experience, education, awards, and contact-info.
 
-- **Card title** convention: `{colors.primary}` green with a `before:content-['>_']` prefix for list-item titles (projects, community, experience, education) or `before:content-['#_']` for category headings (skills). The about feature cards color their `<h3>` green as keys.
-- Project/community cards place the logo in a top region closed by `border-b border-border`.
+- **Card title** convention: `{colors.primary}` green with a `before:content-['>_']` prefix for list-item titles (projects, community, experience, education, certifications) or `before:content-['#_']` for category headings (skills). The about feature cards color their `<h3>` green as keys.
+- Project/community cards place a 64 px desaturated framed logo thumbnail inline with the title.
+- **Card body copy is `{colors.foreground}` ink** — descriptions, achievement bullets, and award lines are real content, not comments. `{colors.muted-foreground}` is reserved for `# comments`, captions, and metadata sub-lines. Awards use a green `*` marker (no emoji).
 
 ### Badges / Chips
 

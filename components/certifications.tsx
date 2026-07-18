@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import SectionHeading from '@/components/section-heading';
 
@@ -15,18 +15,15 @@ export default function Certifications() {
       <div className="container mx-auto px-4">
         <SectionHeading command="cat certifications.txt" />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {certifications.map((cert, index) => (
             <Card key={index}>
               <CardHeader>
-                <CardTitle className="text-lg text-center">
-                  {cert.name}
-                  <br></br>
-                  <Badge variant={cert.issuer !== 'Udemy' ? 'default' : 'secondary'} className="mt-2">
-                    {cert.issuer}
-                  </Badge>
-                </CardTitle>
+                <CardTitle className="text-lg text-primary before:content-['>_']">{cert.name}</CardTitle>
               </CardHeader>
+              <CardContent>
+                <Badge variant={cert.issuer !== 'Udemy' ? 'default' : 'secondary'}>{cert.issuer}</Badge>
+              </CardContent>
             </Card>
           ))}
         </div>
